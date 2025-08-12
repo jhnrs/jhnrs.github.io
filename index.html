@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>John — Portfolio</title>
+  <style>
+    :root{--bg:#fff;--text:#0b1220;--muted:#556674;--accent:#0ea5a3}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:#f6f9fb;color:var(--text)}
+    .container{max-width:980px;margin:30px auto;padding:28px}
+    header{display:flex;align-items:center;gap:18px}
+    .photo{width:84px;height:84px;background:linear-gradient(135deg,var(--accent),#7c3aed);border-radius:16px;display:flex;align-items:center;justify-content:center;font-weight:700;color:white;font-size:1.2rem}
+    h1{margin:0}
+    .subtitle{color:var(--muted);margin-top:6px}
+    nav{margin-left:auto}
+    nav a{margin-left:12px;color:var(--muted);text-decoration:none}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:22px}
+    .card{background:white;border-radius:12px;padding:18px;box-shadow:0 8px 24px rgba(12,20,30,0.06)}
+    .list{padding-left:18px;color:var(--muted)}
+    .chip{display:inline-block;padding:6px 10px;background:#f1fbfa;border-radius:999px;margin:6px 6px 0 0}
+    .projects .item{border-left:3px solid var(--accent);padding:10px 12px;margin-bottom:10px}
+    .skills li{margin:10px 0}
+    .bar{height:10px;background:#eef4f6;border-radius:999px;overflow:hidden}
+    .bar > b{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--accent),#7c3aed)}
+    footer{margin-top:26px;text-align:center;color:var(--muted)}
+    @media (max-width:880px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div style="display:flex;gap:14px;align-items:center">
+        <div class="photo">J</div>
+        <div>
+          <h1>John — Computer Engineering Student & Developer</h1>
+          <div class="subtitle">Interests: BIOS/firmware, OS development, Android ROMs, AI assistants. Currently learning: Dart & Flutter.</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="grid">
+      <main>
+        <section id="about" class="card">
+          <h2>About me</h2>
+          <p style="color:var(--muted)">Hi — I'm John. I enjoy low-level systems like firmware and operating systems, and I also build cross-platform apps with Flutter. I like learning how things boot and how software interacts with hardware.</p>
+
+          <h3 style="margin-top:14px">Currently learning</h3>
+          <div class="chip">Dart</div><div class="chip">Flutter</div><div class="chip">Self-hosted LLMs</div>
+        </section>
+
+        <section id="projects" class="card projects" style="margin-top:14px">
+          <h2>Projects & Experiments</h2>
+          <div class="item">
+            <strong>Custom Android ROM experiment</strong>
+            <p class="list">Built a minimal custom ROM to understand vendor partitions, tweaked system props and learned flashing/bootloader flows.</p>
+          </div>
+          <div class="item">
+            <strong>Bootloader learning lab</strong>
+            <p class="list">Explored bootloader stages and wrote simple early-stage init code for a Raspberry Pi / emulated board.</p>
+          </div>
+          <div class="item">
+            <strong>Flutter note-taking app (WIP)</strong>
+            <p class="list">A cross-platform note app to practice Dart and Flutter layouts, navigation, and state management.</p>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:14px">
+          <h2>Goals</h2>
+          <ul class="list">
+            <li>Deepen firmware and OS knowledge</li>
+            <li>Ship cross-platform apps using Flutter</li>
+            <li>Experiment with self-hosted AI code assistants</li>
+          </ul>
+        </section>
+      </main>
+
+      <aside>
+        <div class="card">
+          <h3>Skills</h3>
+          <ul class="skills">
+            <li>C / C++ <div class="bar" aria-hidden><b style="width:86%"></b></div></li>
+            <li>Dart & Flutter <div class="bar" aria-hidden><b style="width:60%"></b></div></li>
+            <li>Linux & Embedded <div class="bar" aria-hidden><b style="width:72%"></b></div></li>
+            <li>Android System <div class="bar" aria-hidden><b style="width:68%"></b></div></li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3>Contact</h3>
+          <p style="color:var(--muted)">Email: <a href="mailto:john@example.com">john@example.com</a></p>
+          <p style="color:var(--muted);margin-top:10px">GitHub: <a href="#">github.com/your-username</a></p>
+        </div>
+      </aside>
+    </div>
+
+    <footer id="contact"></footer>
+  </div>
+</body>
+</html>
