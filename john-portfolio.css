@@ -10,10 +10,13 @@
 }
 
 body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #000428, #2c1a4d);
+  background-attachment: fixed;
+  background-size: cover;
+  color: white;
   margin: 0;
-  font-family: Inter, system-ui, Segoe UI, Roboto, Arial;
-  background: var(--bg-gradient);
-  color: var(--text);
+  padding: 0;
 }
 
 .container {
