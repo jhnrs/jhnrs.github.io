@@ -1,22 +1,27 @@
 <!doctype html>
 <html lang="en">
+
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="bg-gradient:linear-gradient(135deg, #0f172a, #1e293b, #312e81, #a21caf)">
   <title>John — Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
+
 <body>
   <div class="container">
-    <header>
+    <header class = "header">
       <div style="display:flex;gap:14px;align-items:center">
-        <div class="photo">J</div>
+        <img src="assets/profile-photo.webp" alt="my profile photo" class="photo">
         <div>
-          <h1>(DEMO)John — Computer Engineering Student & Future Developer</h1>
-          <div class="subtitle">Interests: BIOS/firmware, OS development, Android ROMs, AI assistants. Currently learning: Dart & Flutter.</div>
+          <h2>(Demo) John - Portfolio</h2>
+          <div class="subtitle"></div>
         </div>
       </div>
-      <nav>
+      <nav class = "nav">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
@@ -29,13 +34,24 @@
           <h2>About me</h2>
           <p>Hi — I'm John. I enjoy low-level systems like firmware and operating systems, and I also build cross-platform apps with Flutter. I like learning how things boot and how software interacts with hardware.</p>
 
-<h3>Currently Learning:</h3>          
-<h4>Programming Languages</h4>
-          <div class="chip">Dart</div><div class="chip">C#</div><div class="chip">C++</div><div class="chip">Java</div><div class="chip">Kotlin</div>
-<h4>Frameworks</h4>
-<div class="chip">Flutter</div><div class="chip">.NET MAUI</div>
-<h4>Web Technologies</h4>
-<div class="chip">HTML</div><div class= "chip">CSS</div>
+            <h3>Currently Learning:</h3>          
+                <h4>Programming Languages</h4>
+                  <div class="chip">Dart</div><div class="chip">C#</div><div class="chip">C++</div><div class="chip">Java</div><div class="chip">Kotlin</div>
+                <h4>Frameworks</h4>
+                  <div class="chip">Flutter</div><div class="chip">.NET MAUI</div>
+                <h4>Web Technologies</h4>
+                  <div class="chip">HTML</div><div class= "chip">CSS</div>
+        </section>
+
+        <section class="card">
+          <h2>Interests</h2>
+          <ul class="interests">
+            <li>Cross-platform app development</li>
+            <li>OS development</li>
+            <li>Android ROMs</li>
+            <li>Low-level programming</li>
+            <li>Bootloaders and system initialization</li>
+          </ul>
         </section>
 
         <section id="projects" class="card projects">
@@ -75,15 +91,15 @@
           </ul>
         </div>
 
-        <div class="card">
+        <div class="card" id="contact">
           <h3>Contact</h3>
-          <p>Email: <a href="mailto:john@example.com">john@example.com</a></p>
-          <p>GitHub: <a href="#">github.com/your-username</a></p>
+          <p>Email: <a href="mailto:johnrosales933@gmail.com">johnrosales933@gmail.com</a></p>
+          <p>GitHub: <a href="https://github.com/jhnrs">github.com/jhnrs</a></p>
         </div>
       </aside>
     </div>
 
-    <footer id="contact">© John — Portfolio</footer>
+    <footer>© John — Portfolio</footer>
   </div>
 </body>
 </html>

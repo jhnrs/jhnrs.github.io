@@ -5,6 +5,11 @@
   --accent: #0ea5a3;
 }
 
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -32,6 +37,7 @@ header {
 }
 
 .photo {
+  src: "assets/profile-photo.webp";
   width: 84px;
   height: 84px;
   background: linear-gradient(135deg, var(--accent), #7c3aed);
@@ -53,14 +59,24 @@ h1 {
   margin-top: 6px;
 }
 
-nav {
-  margin-left: auto;
+nav { /* Navigation bar */
+  display: device-flex;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  background: rgba(49, 46, 129, 0.5);
+  backdrop-filter: blur(10px);
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 50px;
+  width: device-width;
 }
 
-nav a {
+nav a {  /* Navigation links */
   margin-left: 12px;
   color: var(--muted);
-  text-decoration: none;
+  text-decoration: solid;
 }
 
 .grid {
@@ -75,6 +91,7 @@ nav a {
   border-radius: 12px;
   padding: 18px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  margin: 10px 0;
 }
 
 .list {
@@ -94,6 +111,10 @@ nav a {
   border-left: 3px solid var(--accent);
   padding: 10px 12px;
   margin-bottom: 10px;
+}
+
+.interests li {
+  padding-bottom: 6px;
 }
 
 .skills li {
