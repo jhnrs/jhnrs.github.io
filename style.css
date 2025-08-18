@@ -121,25 +121,41 @@ h1, h2 {
 /* Content Elements */
 .chip-container {
   margin: 8px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .chip {
   display: inline-flex;
   align-items: center;
-  padding: 6px 10px;
+  justify-content: center;
+  min-width: 80px;
+  max-width: 110px;
+  height: 28px;
+  padding: 0 8px;
   background: rgba(255, 255, 255, 0.08);
   border-radius: 999px;
-  margin: 6px 6px 0 0;
-  font-size: 0.95rem;
+  margin: 6px 0 0 0;
+  font-size: 0.92rem;
+  font-weight: 500;
+  gap: 6px;
+  white-space: nowrap;
+  box-sizing: border-box;
+  transition: background 0.2s;
 }
 
 .chip-icon {
-  width: 18px;
-  height: 18px;
-  margin-right: 6px;
-  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+  flex-shrink: 0;
   display: inline-block;
   object-fit: contain;
+}
+
+.chip:hover {
+  background: rgba(14, 165, 163, 0.15);
 }
 
 .projects .item {
