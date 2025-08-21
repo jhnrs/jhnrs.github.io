@@ -113,9 +113,22 @@ h1, h2 {
 .card {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
+  padding: 10px 16px; /* padding: top right bottom left */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  margin: 10px 0;
+}
+
+.about {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
   padding: 18px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   margin: 10px 0;
+}
+
+.about li {
+  padding-left: 15px;
+  margin: 6px 0;
 }
 
 /* Content Elements */
@@ -124,6 +137,7 @@ h1, h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  padding: 0 15px 5px; /* padding: top right bottom left */
 }
 
 .chip {
@@ -131,7 +145,7 @@ h1, h2 {
   align-items: center;
   justify-content: center;
   min-width: 80px;
-  max-width: 110px;
+  max-width: 120px;
   height: 28px;
   padding: 0 8px;
   background: rgba(255, 255, 255, 0.08);
@@ -146,8 +160,8 @@ h1, h2 {
 }
 
 .chip-icon {
-  width: 16px;
-  height: 16px;
+  width: 23px;
+  height: 23px;
   margin-right: 4px;
   flex-shrink: 0;
   display: inline-block;
