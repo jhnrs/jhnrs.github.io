@@ -1,0 +1,325 @@
+:root {
+  --bg-gradient: linear-gradient(135deg, #0f172a, #1e293b, #312e81, #a21caf);
+  --text: #e6eef6;
+  --muted: #94a3b8;
+  --accent: #0ea5a3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100vh;
+  height: 100dvh;
+  height: -webkit-fill-available;
+  background: linear-gradient(135deg, #000428, #2c1a4d);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma;
+  background: inherit;
+  color: white;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  min-height: -webkit-fill-available;
+}
+
+/* Fill any viewport gaps on mobile */
+body::after {
+  content: '';
+  position: fixed;
+  top: 100vh;
+  top: 100dvh;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(135deg, #000428, #2c1a4d);
+  z-index: -1;
+}
+
+.container {
+  max-width: 980px;
+  margin: 30px auto;
+  padding: 80px 28px 28px;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(49, 46, 129, 0.8);
+  backdrop-filter: blur(10px);
+  justify-content: center;
+  gap: 24px;
+  padding: 20px;
+  width: 100vw;
+}
+
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: var(--accent);
+}
+
+/* Header */
+.profile-section {
+  /* display: flex; */
+  gap: 14px;
+  align-items: center;
+}
+
+.photo {
+  width: 84px;
+  height: 84px;
+  background: linear-gradient(135deg, var(--accent), #7c3aed);
+  border-radius: 16px;
+  /* display: flex; */
+  /* align-items: center;
+  justify-content: center; */
+  font-weight: 700;
+  color: white;
+  font-size: 1.2rem;
+  /* object-fit: cover; */
+}
+.header {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* h1, h2 {
+  margin: 0;
+} */
+
+
+h1, h2, h3 {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 10px 30px; /* padding: top right bottom left */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  margin: 10px 0;
+  text-align: center;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-top: 6px;
+  text-align: center;
+}
+
+/* Layout */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr ; /* edited: last property and value: grid-template-columns: 1fr 320px; */
+  gap: 20px;
+  margin-top: 22px;
+}
+
+/*----------------------------------------------------*/
+
+.about {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  margin: 10px 0;
+}
+.about li {
+  margin: 6px 18px;
+}
+
+/*----------------------------------------------------*/
+
+.currently-learning {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 10px 30px; /* padding: top right bottom left */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  margin: 10px 0;
+}
+.currently-learning li {
+  margin: 6px 18px;
+}
+
+/*----------------------------------------------------*/
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 10px 30px; /* padding: top right bottom left */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  margin: 10px 0;
+}
+.card .li {
+  margin: 6px 0;
+}
+
+/* Content Elements */
+.chip-container {
+  margin: 10px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 15px 5px ; /* padding: top right bottom left */
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  max-width: 120px;
+  height: 30px;
+  width: fit-content;
+  padding: 0 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  margin: 6px 0 0 0;
+  font-size: 0.92rem;
+  font-weight: 500;
+  gap: 6px;
+  white-space: nowrap;
+  box-sizing: border-box;
+  transition: background 0.2s;
+}
+.chip-icon {
+  width: 23px;
+  height: 23px;
+  margin-right: 4px;
+  flex-shrink: 0;
+  display: inline-block;
+  object-fit: contain;
+}
+.chip:hover {
+  background: rgba(14, 165, 163, 0.15);
+}
+
+.projects-title {
+  /* display: flex; */ /* Edited: doesn't center the title as it conflicts with <center> tag */
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.projects .item {
+  border-left: 7px solid var(--accent);
+  padding: 10px 12px;
+  margin-bottom: 10px;
+}
+.projects .item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 10px 16px; /* padding: top right bottom left */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  margin: 10px 0;
+}
+.projects .item li {
+  margin: 6px 18px;
+}
+
+.interests li {
+  padding-bottom: 6px;
+}
+
+.goals {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 10px 16px; /* padding: top right bottom left */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  margin: 10px 0;
+}
+
+.skills li {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 10px 30px; /* padding: top right bottom left */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  margin: 10px 0;
+}
+.contact ul {
+  margin: 6px 18px;
+}
+.bar {
+  height: 10px;
+  width: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-left: 10px;
+}
+
+.bar span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), #7c3aed);
+}
+
+/* Links */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  margin-top: 26px;
+  text-align: center;
+  color: var(--muted);
+  padding-bottom: 40px;
+}
+
+/* Responsive */
+/* @media (max-width: 880px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+} */
+
+@media (max-width: 768px) { /* This enclosed part is for mobile devices. */
+  .nav {
+    padding: 15px 20px;
+    gap: 16px;
+  }
+  
+  .container {
+    padding: 70px 20px 20px;
+    margin: 20px auto;
+  }
+  
+  .profile-section {
+    flex-direction: column;
+    text-align: center;
+    padding-left: 15px;
+  }
+  
+  .skills li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  
+  .bar {
+    margin-left: 0;
+  }
+}

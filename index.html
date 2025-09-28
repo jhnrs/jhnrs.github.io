@@ -2,83 +2,144 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>John — Portfolio</title>
-  <link rel="stylesheet" href="john-portfolio.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0f172a">
+  <title>Jhnrs — Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
+
 <body>
+  
+  <nav class="nav">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <a href="certifications.html">Certifications</a>
+  </nav>
+
   <div class="container">
-    <header>
-      <div style="display:flex;gap:14px;align-items:center">
-        <div class="photo">J</div>
+    <header class="header">
+      <div class="profile-section">
+        <img src="assets/profile/profile-photo.webp" alt="me" class="photo">
         <div>
-          <h1>John — Computer Engineering Student & Future Developer</h1>
-          <div class="subtitle">Interests: BIOS/firmware, OS development, Android ROMs, AI assistants. Currently learning: Dart & Flutter.</div>
+          <h1>Hi! I'm an Indie Developer</h1>
+          <div class="subtitle"><justify>Passionate about creating software applications <br>tailored to users’ needs</justify></div>
         </div>
       </div>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
     </header>
 
     <div class="grid">
       <main>
-        <section id="about" class="card">
-          <h2>About me</h2>
-          <p>Hi — I'm John. I enjoy low-level systems like firmware and operating systems, and I also build cross-platform apps with Flutter. I like learning how things boot and how software interacts with hardware.</p>
 
-          <h3>Currently learning</h3>
-          <div class="chip">Dart</div><div class="chip">Flutter</div>
+        <section id="about" class="about">
+          <h2>About</h2>
+          <strong><p>Hi, I'm John.<p></strong>
+          <p>I’m a motivated and continuously learning software developer with a strong interest in creating applications that are <strong>practical</strong>,<strong> user-friendly</strong>, and<strong> adaptable</strong> to users’ needs. My work emphasizes <strong>usability</strong>,<strong> functionality</strong>, and <strong>reliability</strong>, and I’m committed to improving my skills through hands-on projects and industry best practices.</p>
+          <p>I value:</p>
+          <li><strong>User-focused design</strong> – building solutions that solve real problems.</li>
+          <li><strong>Quality code</strong> – writing maintainable and efficient applications.</li>
+          <li><strong>Growth mindset</strong> – consistently learning new frameworks, tools, and approaches.</li>
         </section>
 
-        <section id="projects" class="card projects">
-          <h2>Projects & Experiments</h2>
-          <div class="item">
-            <strong>Custom Android ROM experiment</strong>
-            <p>Built a minimal custom ROM to understand vendor partitions, tweaked system props and learned flashing/bootloader flows.</p>
+        <section class="currently-learning">
+          <h2>Currently Learning</h2>          
+          <strong><li>Programming Languages</li></strong>
+          <div class="chip-container">
+            <div class="chip" ><img src="assets/icons/dart.svg" alt="Dart icon" class="chip-icon">Dart</div>
+            <div class="chip"><img src="assets/icons/csharp.svg" alt="C# icon" class="chip-icon">C#</div>
+            <div class="chip"><img src="assets/icons/cpp.svg" alt="C++ icon" class="chip-icon">C++</div>
+            <div class="chip"><img src="assets/icons/java.svg" alt="Java icon" class="chip-icon">Java</div>
+            <div class="chip"><img src="assets/icons/kotlin.svg" alt="Kotlin icon" class="chip-icon">Kotlin</div>
+            <div class="chip"><img src="assets/icons/javascript.svg" alt="JavaScript icon" class="chip-icon">JavaScript</div>
           </div>
-          <div class="item">
-            <strong>Bootloader learning lab</strong>
-            <p>Explored bootloader stages and wrote simple early-stage init code for a Raspberry Pi / emulated board.</p>
+          
+          <strong><li>Frameworks</li></strong>
+          <div class="chip-container">
+            <div class="chip"><img src="assets/icons/flutter.svg" alt="Flutter icon" class="chip-icon">Flutter</div>
+            <div class="chip"><img src="assets/icons/dotnet-maui.svg" alt=".NET MAUI icon" class="chip-icon">.NET MAUI</div>
+            <div class="chip"><img src="assets/icons/react.svg" alt="React icon" class="chip-icon">React</div>
+            <div class="chip"><img src="assets/icons/reactnative.svg" alt="React Native icon" class="chip-icon">React Native</div>
           </div>
-          <div class="item">
-            <strong>Flutter note-taking app (WIP)</strong>
-            <p>A cross-platform note app to practice Dart and Flutter layouts, navigation, and state management.</p>
+          
+          <strong><li>Web Technologies</li></strong>
+          <div class="chip-container">
+            <div class="chip"><img src="assets/icons/html.svg" alt="HTML icon" class="chip-icon">HTML</div>
+            <div class="chip"><img src="assets/icons/css.svg" alt="CSS icon" class="chip-icon">CSS</div>
           </div>
         </section>
 
         <section class="card">
-          <h2>Goals</h2>
-          <ul>
-            <li>Deepen firmware and OS knowledge</li>
-            <li>Ship cross-platform apps using Flutter</li>
-            <li>Experiment with AI code assistants</li>
+          <h2>Interests</h2>
+          <ul class="interests">
+            <li>Cross-platform app development</li>
+            <li>OS development</li>
+            <li>Android ROMs</li>
+            <li>Low-level programming</li>
           </ul>
         </section>
-      </main>
 
-      <aside>
+        <section id="projects" class="card projects">
+          <h2 class="projects-title">Projects (Work in Progress)</h2>
+
+          <div class="item">
+            <strong>Markly (A notes app)</strong>
+            <p>A note-taking app with the concept tailored for developers.</p>
+            <p>Features:</p>
+            <li>Add tasks and reminders directly inside your notes</li>
+            <li>Organize notes to match your projects or workflow</li>
+            <li>Lightweight, intuitive, and designed for productivity</li>
+            <li>(Still a concept): IDE integration (e.g., VS Code) for seamless access to Markly notes and reminders.</li>
+          </div>
+
+          <div class="item">
+            <strong>Zealify</strong>
+            <p>Zealify is a developer-friendly app that puts programming documentation right in your pocket. Inspired by the popular Zeal tool, it lets you quickly access docsets anytime, anywhere—making coding references fast, simple, and always within reach. It’s also a great resource for students who want to learn programming directly from official documentation, without relying on AI tools.</p>
+          </div>
+          <div class="item">
+            <strong>Musicly</strong>
+            <p>Musicly is a music app designed with Material 3, giving it a clean and modern look. It lets you enjoy and organize your favorite tracks with a simple, easy-to-use interface.</p>
+          </div>
+          <h4>For full details, check here:</h4><a href="projects.html">Check out my projects!</a>
+        </section>
+
+        <section class="goals">
+          <h2>Goals</h2>
+          <ul>
+            <li style="padding-bottom: 6px;">Deepen firmware and OS knowledge</li>
+            <li style="padding-bottom: 6px;">Ship cross-platform apps using Flutter</li>
+            <li style="padding-bottom: 6px;">Experiment with AI code assistants</li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2>Certification</h2>
+          <!-- Add certifications here in the future -->
+        </section>
+
         <div class="card">
-          <h3>Skills</h3>
+          <h2>Skills</h2>
           <ul class="skills">
-            <li>C / C++ <div class="bar"><b style="width:86%"></b></div></li>
-            <li>Dart & Flutter <div class="bar"><b style="width:60%"></b></div></li>
-            <li>Linux & Embedded <div class="bar"><b style="width:72%"></b></div></li>
-            <li>Android System <div class="bar"><b style="width:68%"></b></div></li>
+            <li>C / C++ <div class="bar"><span style="width:86%"></span></div></li>
+            <li>Dart & Flutter <div class="bar"><span style="width:60%"></span></div></li>
+            <li>Linux & Embedded <div class="bar"><span style="width:72%"></span></div></li>
+            <li>Android System <div class="bar"><span style="width:68%"></span></div></li>
           </ul>
         </div>
 
-        <div class="card">
-          <h3>Contact</h3>
-          <p>Email: <a href="mailto:john@example.com">john@example.com</a></p>
-          <p>GitHub: <a href="#">github.com/your-username</a></p>
+        <div class="contact" id="contact">
+          <h2>Contact</h2>
+          <ul>Email: <a href="mailto:johnrosales933@gmail.com">johnrosales933@gmail.com</a></ul>
+          <ul>GitHub: <a href="https://github.com/jhnrs" target="_blank" rel="noopener noreferrer">github.com/jhnrs</a></ul>
+          <ul>LinkedIn: <a href="https://www.linkedin.com/in/justjohn07" target="_blank" rel="noopener noreferrer">linkedin.com/in/justjohn07</a></ul>
         </div>
-      </aside>
+
+      </main>
     </div>
 
-    <footer id="contact">© John — Portfolio</footer>
+    <footer>© John — My Portfolio</footer>
   </div>
+  
+  <script src="content.js"></script>
 </body>
 </html>
