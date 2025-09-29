@@ -108,7 +108,7 @@ h1, h2, h3 {
   border-radius: 12px;
   padding: 10px 30px; /* padding: top right bottom left */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  margin: 10px 0;
+  margin: 0px 75px 30px 75px;
   text-align: center;
 }
 
@@ -303,14 +303,15 @@ footer {
   }
   
   .container {
-    padding: 70px 20px 20px;
-    margin: 20px auto;
+    padding: 70px 20px;
+    margin: 10px auto;
   }
   
   .profile-section {
-    flex-direction: column;
+    align-content: center;
     text-align: center;
-    padding-left: 15px;
+    padding-left: 35px;
+    padding-right: 35px;
   }
   
   .skills li {
