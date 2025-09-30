@@ -1,3 +1,5 @@
+/* All comments made to this file are for "remembrance" purposes */
+
 :root {
   --bg-gradient: linear-gradient(135deg, #0f172a, #1e293b, #312e81, #a21caf);
   --text: #e6eef6;
@@ -14,7 +16,14 @@ html {
   height: 100dvh;
   height: -webkit-fill-available;
   background: linear-gradient(135deg, #000428, #2c1a4d);
+  scroll-behavior: smooth; /* For smooth scrolling effect selecting items in navigations, except for another page links */
 }
+/* ---------------------------------------------------------------- */
+/* Some tweaks for navigation selection */
+#about, #projects {
+  scroll-margin-top: 100px;
+}
+/* ---------------------------------------------------------------- */
 
 body {
   font-family: 'Segoe UI', Tahoma;
@@ -25,6 +34,8 @@ body {
   min-height: 100vh;
   min-height: 100dvh;
   min-height: -webkit-fill-available;
+  cursor: default; /* For the cursor (for Desktops) to not trigger its text Icon/mode */
+  /* user-select: none; */ /* This property is useful for making the page non-selectable "???" */
 }
 
 /* Fill any viewport gaps on mobile */
@@ -39,6 +50,35 @@ body::after {
   background: linear-gradient(135deg, #000428, #2c1a4d);
   z-index: -1;
 }
+/* -------------------------------------------------------------------- */
+/* For Animations (testing) */
+/* there's JS code reliance */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header,
+.about,
+.currently-learning,
+.interests,
+.projects,
+.goals,
+.certifications,
+.skills,
+.contact {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* -------------------------------------------------------------------- */
 
 .container {
   max-width: 980px;
@@ -61,13 +101,11 @@ body::after {
   padding: 20px;
   width: 100vw;
 }
-
 .nav a {
   color: var(--muted);
   text-decoration: none;
   transition: color 0.3s ease;
 }
-
 .nav a:hover {
   color: var(--accent);
 }
@@ -80,8 +118,8 @@ body::after {
 }
 
 .photo {
-  width: 84px;
-  height: 84px;
+  width: 120px;
+  height: 120px;
   background: linear-gradient(135deg, var(--accent), #7c3aed);
   border-radius: 16px;
   /* display: flex; */
@@ -106,9 +144,9 @@ body::after {
 h1, h2, h3 {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
-  padding: 10px 30px; /* padding: top right bottom left */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  margin: 0px 75px 30px 75px;
+  padding: 10px 30px; /* padding: top right bottom left */
+  margin: 0px 75px 0px 75px;
   text-align: center;
 }
 
@@ -128,37 +166,75 @@ h1, h2, h3 {
 
 /*----------------------------------------------------*/
 
-.about {
+.card-about {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   padding: 30px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   margin: 10px 0;
 }
-.about li {
+.card-about li {
   margin: 6px 18px;
 }
 
 /*----------------------------------------------------*/
 
-.currently-learning {
+.card-currently-learning {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
-  padding: 10px 30px; /* padding: top right bottom left */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  padding: 10px 30px; /* padding: top right bottom left */
   margin: 10px 0;
 }
-.currently-learning li {
+.card-currently-learning li {
   margin: 6px 18px;
 }
 
 /*----------------------------------------------------*/
+.card-interests {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  padding: 10px 30px; /* padding: top right bottom left */
+  margin: 10px 0;
+}
+.card-interests li {
+  padding-bottom: 6px;
+}
+
+/* ----------------------------------------------------------------- */
+
+.card-certifications {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  padding: 10px 30px; /* padding: top right bottom left */
+  margin: 10px 0;
+}
+
+/* ----------------------------------------------------------------- */
+
+.card-skills {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  padding: 10px 30px; /* padding: top right bottom left */
+  margin: 10px 0;
+}
+.card-skills li {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ----------------------------------------------------------------- */
 
 .card {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
-  padding: 10px 30px; /* padding: top right bottom left */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  padding: 10px 30px; /* padding: top right bottom left */
   margin: 10px 0;
 }
 .card .li {
@@ -204,57 +280,69 @@ h1, h2, h3 {
   background: rgba(14, 165, 163, 0.15);
 }
 
-.projects-title {
-  /* display: flex; */ /* Edited: doesn't center the title as it conflicts with <center> tag */
+/* FROM .projects-title: display: flex; */ /* Edited: doesn't center the title as it conflicts with <center> tag */
+
+/* .projects-title {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 12px;
 }
-.projects .item {
+ */
+
+ .card-projects {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  padding: 10px 30px; /* padding: top right bottom left */
+  margin: 10px 0;
+ }
+.card-projects .item {
   border-left: 7px solid var(--accent);
   padding: 10px 12px;
   margin-bottom: 10px;
 }
-.projects .item:hover {
+.card-projects .item:hover {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 16px;
-  padding: 10px 16px; /* padding: top right bottom left */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  padding: 10px 16px; /* padding: top right bottom left */
   margin: 10px 0;
+  transition: ease 0.2s;
 }
-.projects .item li {
+.card-projects .item:not(:hover) { /* opposite of :hover is just use :not(:hover) */
+  transition: ease 0.2s;
+}
+
+.card-projects .item li {
   margin: 6px 18px;
 }
 
-.interests li {
+.card-goals {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  padding: 10px 16px; /* padding: top right bottom left */
+  margin: 10px 0;
+}
+.card-goals li {
+  text-align: center;
   padding-bottom: 6px;
+  /* list-style: none; */
 }
 
-.goals {
+.card-contact {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
-  padding: 10px 16px; /* padding: top right bottom left */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  margin: 10px 0;
-}
-
-.skills li {
-  margin: 10px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.contact {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
   padding: 10px 30px; /* padding: top right bottom left */
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   margin: 10px 0;
+  align-content: center;
+
 }
-.contact ul {
+.card-contact ul {
   margin: 6px 18px;
 }
+
 .bar {
   height: 10px;
   width: 100px;
@@ -263,7 +351,6 @@ h1, h2, h3 {
   overflow: hidden;
   margin-left: 10px;
 }
-
 .bar span {
   display: block;
   height: 100%;
@@ -314,7 +401,7 @@ footer {
     padding-right: 35px;
   }
   
-  .skills li {
+  .card-skills li {
     flex-direction: column;
     align-items: flex-start;
     gap: 5px;
