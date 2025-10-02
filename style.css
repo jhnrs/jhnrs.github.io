@@ -88,22 +88,28 @@ body::after {
 
 /* Navigation */
 .nav {
-  display: flex;
+  display: inline-block;
   position: fixed;
-  top: 0;
+  margin: 0px auto;
+  top: 15px;
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(49, 46, 129, 0.8);
+  outline: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  background: rgba(49, 46, 129, 0.5);
   backdrop-filter: blur(10px);
-  justify-content: center;
+  /* justify-content: center; */
+  text-align: center;
   gap: 24px;
   padding: 20px;
-  width: 100vw;
+  width: 65vw;
 }
 .nav a {
   color: var(--muted);
   text-decoration: none;
+  text-align: center;
+  font-weight: 400;
   transition: color 0.3s ease;
 }
 .nav a:hover {
@@ -377,13 +383,20 @@ footer {
 }
 
 /* Responsive */
-/* @media (max-width: 880px) {
+@media (max-width: 880px) {
   .grid {
     grid-template-columns: 1fr;
   }
-} */
+}
 
 @media (max-width: 768px) { /* This enclosed part is for mobile devices. */
+  .header {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  
   .nav {
     padding: 15px 20px;
     gap: 16px;
@@ -397,8 +410,9 @@ footer {
   .profile-section {
     align-content: center;
     text-align: center;
-    padding-left: 35px;
-    padding-right: 35px;
+    /* padding-left: 35px;
+    padding-right: 35px; */
+    gap: 10px;
   }
   
   .card-skills li {
