@@ -88,7 +88,7 @@ body::after {
 
 /* Navigation */
 .nav {
-  display: inline-block;
+  display: flex;
   position: fixed;
   margin: 0px auto;
   top: 15px;
@@ -99,11 +99,11 @@ body::after {
   border-radius: 20px;
   background: rgba(49, 46, 129, 0.5);
   backdrop-filter: blur(10px);
-  /* justify-content: center; */
+  justify-content: space-evenly;
   text-align: center;
   gap: 24px;
   padding: 20px;
-  width: 65vw;
+  width: calc(50vw + 100px); /* Tip: use Calc function for easier calculations depending on screen size */
 }
 .nav a {
   color: var(--muted);
