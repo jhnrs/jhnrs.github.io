@@ -65,15 +65,8 @@ body::after {
   }
 }
 
-.header,
-.about,
-.currently-learning,
-.interests,
-.projects,
-.goals,
-.certifications,
-.skills,
-.contact {
+
+.header, .card-about {
   opacity: 0;
   animation: fadeInUp 0.6s ease forwards;
 }
