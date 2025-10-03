@@ -68,6 +68,11 @@ body::after {
 
 .header, .card-about {
   opacity: 0;
+  animation: fadeInUp 0.6s ease-in-out forwards;
+}
+
+.nav {
+  opacity: 0;
   animation: fadeInUp 0.6s ease forwards;
 }
 
