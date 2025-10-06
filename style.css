@@ -75,7 +75,12 @@ body::after {
   opacity: 0;
   animation: fadeInUp 0.6s ease forwards;
 }
-
+/* -------------------------------------------------------------------- */
+/* .loader1 { for splash screen
+  text-align: center;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+} */
 /* -------------------------------------------------------------------- */
 
 .container {
