@@ -1,7 +1,10 @@
-/* All comments made to this file are for "remembrance" purposes */
+/* All comments made to this file are for "remembrance" purposes or others */
+/* Use with Chrome DevTools*/
+
 
 :root {
-  --bg-gradient: linear-gradient(135deg, #0f172a, #1e293b, #312e81, #a21caf);
+  --background: rgba(#0ea5a3);
+  --bg-gradient: linear-gradient(135deg, #0f172a, #1e293b, #312e81, #390d3d);
   --text: #e6eef6;
   --muted: #94a3b8;
   --accent: #0ea5a3;
@@ -15,7 +18,7 @@ html {
   height: 100vh;
   height: 100dvh;
   height: -webkit-fill-available;
-  background: linear-gradient(135deg, #000428, #2c1a4d);
+  background: var(--bg-gradient);/* linear-gradient(135deg, #000428, #2c1a4d); */
   scroll-behavior: smooth; /* For smooth scrolling effect selecting items in navigations, except for another page links */
 }
 /* ---------------------------------------------------------------- */
@@ -50,14 +53,18 @@ body::after {
   background: linear-gradient(135deg, #000428, #2c1a4d);
   z-index: -1;
 }
+
+html, body {
+  overflow-x: hidden;
+}
 /* -------------------------------------------------------------------- */
-/* For Animations (testing) */
+/* For Animations (still in testing) */
 /* there's JS code reliance */
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    /* transform: translateY(20px); */
   }
   to {
     opacity: 1;
@@ -65,16 +72,20 @@ body::after {
   }
 }
 
+@keyframes fadeIntoView {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1;
+  }
+}
 
-.header, .card-about {
+.header, .card {
   opacity: 0;
   animation: fadeInUp 0.6s ease-in-out forwards;
 }
 
-.nav {
-  opacity: 0;
-  animation: fadeInUp 0.6s ease forwards;
-}
 /* -------------------------------------------------------------------- */
 /* .loader1 { for splash screen
   text-align: center;
@@ -92,6 +103,7 @@ body::after {
 /* Navigation */
 .nav {
   display: flex;
+  flex-direction: row;
   position: fixed;
   margin: 0px auto;
   top: 15px;
@@ -107,6 +119,9 @@ body::after {
   gap: 24px;
   padding: 20px;
   width: calc(50vw + 100px); /* Tip: use Calc function for easier calculations depending on screen size */
+
+  opacity: 0;
+  animation: fadeIntoView 1s ease forwards;
 }
 .nav a {
   color: var(--muted);
@@ -121,19 +136,16 @@ body::after {
 
 /* Header */
 .profile-section {
-  /* display: flex; */
   gap: 14px;
   align-items: center;
 }
 
 .photo {
-  width: 120px;
-  height: 120px;
+  z-index: -1;
+  width: 150px;
+  height: 150px;
   background: linear-gradient(135deg, var(--accent), #7c3aed);
   border-radius: 16px;
-  /* display: flex; */
-  /* align-items: center;
-  justify-content: center; */
   font-weight: 700;
   color: white;
   font-size: 1.2rem;
@@ -145,17 +157,12 @@ body::after {
   text-align: center;
 }
 
-/* h1, h2 {
-  margin: 0;
-} */
-
-
 h1, h2, h3 {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   padding: 10px 30px; /* padding: top right bottom left */
-  margin: 0px 75px 10px 75px;
+  margin: 0px 10px 10px 10px;
   text-align: center;
 
 }
@@ -169,96 +176,47 @@ h1, h2, h3 {
 
 /* Layout */
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  display: flex; /* prev display: grid; */
+  flex-direction: column;
+  flex-wrap: wrap;
+  /* grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   columns: 2;
-  gap: 20px;
+  gap: 20px; */
 }
 
 /*----------------------------------------------------*/
 
-.card-about {
+.container .card {
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
+  border-radius: 24px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   padding: 30px;
-  margin: 10px 0;
+  margin: 15px 5px;
 }
-.card-about li {
+.card li {
   margin: 6px 18px;
 }
 
 /*----------------------------------------------------*/
-
-.card-currently-learning {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  padding: 30px;
-  margin: 10px 0;
-}
-.card-about li {
-  margin: 6px 18px;
-}
-
-/*----------------------------------------------------*/
-.card-interests {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  padding: 30px;
-  margin: 10px 0;
-}
-.card-interests li {
-  margin: 6px 18px;
-}
-
-/* ----------------------------------------------------------------- */
-
-.card-certifications {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  padding: 10px 30px; /* padding: top right bottom left */
-  margin: 10px 0;
-}
-
-/* ----------------------------------------------------------------- */
-
-.card-skills {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  padding: 10px 30px; /* padding: top right bottom left */
-  margin: 10px 0;
-}
-.card-skills li {
-  margin: 10px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* ----------------------------------------------------------------- */
-
-.card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  padding: 10px 30px; /* padding: top right bottom left */
-  margin: 10px 0;
-}
-.card .li {
-  margin: 6px 0;
-}
-
 /* Content Elements */
+.currently-learning-container {
+  text-align: center;
+}
+.p-emphasis {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  padding: 10px 30px;
+  margin: 10px 20px;
+}
 .chip-container {
   margin: 10px 0px;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   gap: 8px;
-  padding: 0 15px 5px ; /* padding: top right bottom left */
+  padding: 0px 15px 25px 15px; /* padding: top right bottom left */
+  justify-content: center;
 }
 .chip {
   display: inline-flex;
@@ -293,26 +251,12 @@ h1, h2, h3 {
 
 /* FROM .projects-title: display: flex; */ /* Edited: doesn't center the title as it conflicts with <center> tag */
 
-/* .projects-title {
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-}
- */
-
- .card-projects {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  padding: 30px;
-  margin: 10px 0;
- }
-.card-about .item {
+.card .item {
   border-left: 7px solid var(--accent);
   padding: 10px 12px;
   margin-bottom: 10px;
 }
-.card-about .item:hover {
+.card .item:hover {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
@@ -320,39 +264,17 @@ h1, h2, h3 {
   margin: 10px 0;
   transition: ease 0.2s;
 }
-.card-about .item:not(:hover) { /* opposite of :hover is just use :not(:hover) */
+.card .item:not(:hover) { /* opposite of :hover is just use :not(:hover) */
   transition: ease 0.2s;
 }
-
-.card-projects .item li {
-  margin: 6px 18px;
-}
-
-.card-goals {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  padding: 10px 16px; /* padding: top right bottom left */
-  margin: 10px 0;
-}
-.card-goals li {
+/* ---------------------------------------------------------------------- */
+.contact-container li {
   text-align: center;
-  padding-bottom: 6px;
-  /* list-style: none; */
 }
 
-.card-contact {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  padding: 30px;
-  margin: 10px 0;
-}
-.card-contact li {
-  margin: 6px 18px;
-}
+/* ---------------------------------------------------------------------- */
 
-.bar {
+/* .bar {
   height: 10px;
   width: 100px;
   background: rgba(255, 255, 255, 0.1);
@@ -366,6 +288,8 @@ h1, h2, h3 {
   border-radius: 999px;
   background: linear-gradient(90deg, var(--accent), #7c3aed);
 }
+ */
+
 
 /* Links */
 a {
@@ -389,32 +313,50 @@ footer {
 @media (max-width: 880px) {
   .grid {
     grid-template-columns: 1fr;
+    justify-content: center;
   }
 }
 
-@media (max-width: 768px) { /* This enclosed part is for mobile devices. */
+/* This enclosed part is for mobile devices. */
+/* flex-direction: column; */
+/* padding: top right bottom left */
+/* padding-left: 35px;
+padding-right: 35px; */
+
+@media (max-width: 768px) {
   .header {
-    flex-direction: column;
     text-align: center;
     align-items: center;
     justify-content: center;
   }
   
   .nav {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     padding: 15px 20px;
     gap: 16px;
+    width: 90%;
+    max-width: 500px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 10px auto;
+    padding: 60px 16px;
+  }
+
+  .container .card {
+    padding: 30px 20px;
+    margin: 10px 0;
   }
   
-  .container {
-    padding: 70px 20px;
-    margin: 10px auto;
-  }
   
   .profile-section {
     align-content: center;
     text-align: center;
-    /* padding-left: 35px;
-    padding-right: 35px; */
     gap: 10px;
   }
   
@@ -427,4 +369,37 @@ footer {
   .bar {
     margin-left: 0;
   }
+}
+
+
+/* @media (max-width: 425px) {
+    .header {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 15px 20px;
+    gap: 16px;
+    width: calc(50vw + 100px);
+    position: absolute;
+  }
+
+  body {
+    justify-content: center;
+    align-items: center;
+  }
+}
+ */
+
+/* For certifications.html */
+
+.cert-container {
+  text-align: center;
+  padding: 10px;
 }

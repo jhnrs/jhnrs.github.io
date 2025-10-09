@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- viewport-fit=cover edited out under viewport-name meta tag-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"> <!-- viewport-fit=cover edited out under viewport-name meta tag-->
   <meta name="theme-color" content="#0f172a">
-  <title>Jhnrs — Portfolio</title>
+  <title>(WIP) Jhnrs — Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-
 </head>
 
 <body>
@@ -15,7 +14,7 @@
   <nav class="nav">
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <a href="#contacts">Contact</a>
     <a href="certifications.html">Certifications</a>
   </nav>
 
@@ -47,7 +46,7 @@
     <div class="grid">
       <main>
 
-        <section id="about" class="card-about">
+        <section id="about" class="card">
           <h2>About</h2>
           <strong><p>Hi, I'm John.<p></strong>
           <p>I’m a motivated and continuously learning software developer with a strong interest in creating applications that are <strong>practical</strong>,<strong> user-friendly</strong>, and<strong> adaptable</strong> to users’ needs. My work emphasizes <strong>usability</strong>,<strong> functionality</strong>, and <strong>reliability</strong>, and I’m committed to improving my skills through hands-on projects and industry best practices.</p>
@@ -57,34 +56,37 @@
           <li><strong>Growth mindset</strong> – consistently learning new frameworks, tools, and approaches.</li>
         </section>
 
-        <section class="card-about">
-          <h2>Currently Learning</h2>          
-          <strong><li>Programming Languages</li></strong>
-          <div class="chip-container">
-            <div class="chip" ><img src="assets/icons/dart.svg" alt="Dart icon" class="chip-icon">Dart</div>
-            <div class="chip"><img src="assets/icons/csharp.svg" alt="C# icon" class="chip-icon">C#</div>
-            <div class="chip"><img src="assets/icons/cpp.svg" alt="C++ icon" class="chip-icon">C++</div>
-            <div class="chip"><img src="assets/icons/java.svg" alt="Java icon" class="chip-icon">Java</div>
-            <div class="chip"><img src="assets/icons/kotlin.svg" alt="Kotlin icon" class="chip-icon">Kotlin</div>
-            <div class="chip"><img src="assets/icons/javascript.svg" alt="JavaScript icon" class="chip-icon">JavaScript</div>
-          </div>
-          
-          <strong><li>Frameworks</li></strong>
-          <div class="chip-container">
-            <div class="chip"><img src="assets/icons/flutter.svg" alt="Flutter icon" class="chip-icon">Flutter</div>
-            <div class="chip"><img src="assets/icons/dotnet-maui.svg" alt=".NET MAUI icon" class="chip-icon">.NET MAUI</div>
-            <div class="chip"><img src="assets/icons/react.svg" alt="React icon" class="chip-icon">React</div>
-            <div class="chip"><img src="assets/icons/reactnative.svg" alt="React Native icon" class="chip-icon">React Native</div>
-          </div>
-          
-          <strong><li>Web Technologies</li></strong>
-          <div class="chip-container">
-            <div class="chip"><img src="assets/icons/html.svg" alt="HTML icon" class="chip-icon">HTML</div>
-            <div class="chip"><img src="assets/icons/css.svg" alt="CSS icon" class="chip-icon">CSS</div>
-          </div>
+        <section class="card">
+          <h2>Currently Learning</h2>
+          <div class="currently-learning-container">         
+              <strong><p class="p-emphasis">Programming Languages</p></strong>
+              <div class="chip-container">
+                <div class="chip" ><img src="assets/icons/dart.svg" alt="Dart icon" class="chip-icon">Dart</div>
+                <div class="chip"><img src="assets/icons/csharp.svg" alt="C# icon" class="chip-icon">C#</div>
+                <div class="chip"><img src="assets/icons/cpp.svg" alt="C++ icon" class="chip-icon">C++</div>
+                <div class="chip"><img src="assets/icons/java.svg" alt="Java icon" class="chip-icon">Java</div>
+                <div class="chip"><img src="assets/icons/kotlin.svg" alt="Kotlin icon" class="chip-icon">Kotlin</div>
+                <div class="chip"><img src="assets/icons/javascript.svg" alt="JavaScript icon" class="chip-icon">JavaScript</div>
+                <div class="chip"><img src="assets/icons/python.svg" alt="Python icon" class="chip-icon">Python</div>
+              </div>
+              
+              <strong><p class="p-emphasis">Frameworks</p></strong>
+              <div class="chip-container">
+                <div class="chip"><img src="assets/icons/flutter.svg" alt="Flutter icon" class="chip-icon">Flutter</div>
+                <div class="chip"><img src="assets/icons/dotnet-maui.svg" alt=".NET MAUI icon" class="chip-icon">.NET MAUI</div>
+                <div class="chip"><img src="assets/icons/react.svg" alt="React icon" class="chip-icon">React</div>
+                <div class="chip"><img src="assets/icons/reactnative.svg" alt="React Native icon" class="chip-icon">React Native</div>
+              </div>
+              
+              <strong><p class="p-emphasis">Web Technologies</p></strong>
+              <div class="chip-container">
+                <div class="chip"><img src="assets/icons/html.svg" alt="HTML icon" class="chip-icon">HTML</div>
+                <div class="chip"><img src="assets/icons/css.svg" alt="CSS icon" class="chip-icon">CSS</div>
+              </div>
+            </div>
         </section>
 
-        <section class="card-about">
+        <section class="card">
           <h2>Interests</h2>
             <li>Cross-platform app development</li>
             <li>OS development</li>
@@ -92,7 +94,7 @@
             <li>Low-level programming</li>
         </section>
 
-        <section id="projects" class="card-about">
+        <section id="projects" class="card">
           <h2>Projects (Work in Progress)</h2>
 
           <div class="item">
@@ -107,28 +109,37 @@
 
           <div class="item">
             <strong>Zealify</strong>
-            <p>Zealify is a developer-friendly app that puts programming documentation right in your pocket. Inspired by the popular Zeal tool, it lets you quickly access docsets anytime, anywhere—making coding references fast, simple, and always within reach. It’s also a great resource for students who want to learn programming directly from official documentation, without relying on AI tools.</p>
+            <p>Zealify is a developer-friendly app that puts programming documentation right in your pocket. Inspired by the popular Zeal app, it lets you quickly access docsets anytime, anywhere—making coding references fast, simple, and always within reach. It’s also a great resource for students who want to learn programming directly from official documentation, without relying on AI tools.</p>
+            <p>Features:</p>
+            <li>Support for different programming languages</li>
+            <li>Download resources for offline use.</li>
+            <li>Dark theme tuned for preventing eye-strain. (specifically tuned for OLED devices.)</li>
           </div>
           <div class="item">
             <strong>Musicly</strong>
             <p>Musicly is a music app designed with Material 3, giving it a clean and modern look. It lets you enjoy and organize your favorite tracks with a simple, easy-to-use interface.</p>
+            <p>Features:</p>
+            <li>Support for editing Music Tags</li>
+            <li>Support for Synced Lyrics</li>
+            <li>"Mood Tags"</li>
+            <li>Backup and Restore</li>
           </div>
           <h4>For full details, check here:</h4><a href="projects.html">Check out my projects!</a>
         </section>
 
-        <section class="card-about">
+        <section class="card">
           <h2>Goals</h2>
             <li>Deepen firmware and OS knowledge</li>
             <li>Ship cross-platform apps using Flutter</li>
             <li>Experiment with AI code assistants</li>
         </section>
 
-        <section class="card-about">
+        <section class="card">
           <h2>Certification</h2>
           <!-- Add certifications here in the future -->
         </section>
 
-        <div class="card-about">
+        <div class="card">
           <h2>Skills</h2>
             <li>
               Technical Support - Providing assistance for hardware and software issues
@@ -144,8 +155,9 @@
             </li>
         </div>
 
-        <div class="card-contact" id="contact">
-          <h2>Contact</h2>
+        <div class="card" id="contact">
+          <div class="contact-container">
+          <h2>Contacts</h2>
             <ul>
             <li>
               Email: 
@@ -166,6 +178,7 @@
               </a>
             </li>
           </ul>
+          </div>
         </div>
 
       </main>
