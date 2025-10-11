@@ -4,10 +4,11 @@
 
 :root {
   --background: rgba(#0ea5a3);
-  --bg-gradient: linear-gradient(135deg, #0f172a, #1e293b, #312e81, #390d3d);
+  --bg-gradient: linear-gradient(135deg, #0f172a, #1e293b, #1a1946, #1e0720);
   --text: #e6eef6;
   --muted: #94a3b8;
   --accent: #0ea5a3;
+  --highlight: #1bdaf3;
 }
 
 * {
@@ -203,14 +204,14 @@ h1, h2, h3 {
   text-align: center;
 }
 .p-emphasis {
-  background: rgba(255, 255, 255, 0.05);
+  /* background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); */
   padding: 10px 30px;
-  margin: 10px 20px;
+  margin: 0px 20px;
 }
 .chip-container {
-  margin: 10px 0px;
+  margin: 0px 0px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -269,9 +270,12 @@ h1, h2, h3 {
 }
 /* ---------------------------------------------------------------------- */
 .contact-container li {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
 }
-
+/* using display: flex makes the other "property" align-items: center; to be at center. */
 /* ---------------------------------------------------------------------- */
 
 /* .bar {
@@ -299,6 +303,8 @@ a {
 
 a:hover {
   text-decoration: underline;
+  color: var(--highlight);
+  transition: color 0.3s ease;
 }
 
 /* Footer */
