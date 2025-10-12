@@ -290,10 +290,10 @@ h1, h2, h3 {
   flex-direction: row;
   align-items: center;
   justify-content: left;
-  min-width: 75px;
-  max-width: 300px;
+/*   min-width: 75px;
+  max-width: 300px; */
   height: 60px;
-  width: 500px;
+  width: 18rem;
   padding: 10px 20px;
   background: rgba(255, 255, 255, 0.08);
   border-radius: 15px;
