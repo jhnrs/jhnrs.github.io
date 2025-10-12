@@ -128,7 +128,7 @@ html, body {
   color: var(--muted);
   text-decoration: none;
   text-align: center;
-  font-weight: 400;
+  font-weight: 600;
   transition: color 0.3s ease;
 }
 .nav a:hover {
@@ -236,7 +236,7 @@ h1, h2, h3 {
   gap: 6px;
   white-space: nowrap;
   box-sizing: border-box;
-  transition: background 0.2s;
+  transition: background-color 0.2s;
 }
 .chip-icon {
   width: 23px;
@@ -256,24 +256,63 @@ h1, h2, h3 {
   border-left: 7px solid var(--accent);
   padding: 10px 12px;
   margin-bottom: 10px;
+  transition: ease 0.2s, box-shadow 0.2s, transform 0.3s;
 }
 .card .item:hover {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   padding: 10px 16px; /* padding: top right bottom left */
   margin: 10px 0;
-  transition: ease 0.2s;
+  box-shadow: 0 0 20px rgba(17, 185, 183, 0.719);
+  transform: scale(1.03);
 }
 .card .item:not(:hover) { /* opposite of :hover is just use :not(:hover) */
-  transition: ease 0.2s;
+  transition: ease 0.2s, box-shadow 0.2s, transform 0.3s;
 }
 /* ---------------------------------------------------------------------- */
 .contact-container li {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+}
+.contact-icon {
+  width: 46px;
+  height: 46px;
+  margin-right: 0px;
+  flex-shrink: 0;
+  display: inline-block;
+  object-fit: contain;
+}
+.contact-info-container {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  min-width: 75px;
+  max-width: 300px;
+  height: 60px;
+  width: 500px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  margin: 6px 0 0 0;
+  font-size: 0.92rem;
+  font-weight: 500;
+  gap: 6px;
+  white-space: nowrap;
+  box-sizing: border-box;
+  transition: box-shadow 0.2s, transform 0.3s;
+}
+.contact-info-container .contact-info {
+  text-align: left;
+  display: inline-flex;
+  flex-direction: column;
+}
+.contact-info-container:hover {
+  box-shadow: 0 0 20px rgba(17, 185, 183, 0.719);
+  transform: scale(1.05);
 }
 /* using display: flex makes the other "property" align-items: center; to be at center. */
 /* ---------------------------------------------------------------------- */
