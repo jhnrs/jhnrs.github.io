@@ -1,8 +1,10 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"> <!-- viewport-fit=cover edited out under viewport-name meta tag-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <!-- viewport-fit=cover edited out under viewport-name meta tag-->
   <meta name="theme-color" content="#0f172a">
   <title>(WIP) Jhnrs — Portfolio</title>
   <link rel="stylesheet" href="style.css">
@@ -10,7 +12,7 @@
 </head>
 
 <body>
-  
+
   <nav class="nav">
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
@@ -29,7 +31,7 @@
     <div class="loader3">
       <h1>Launching...</h1>
     </div>
-  </div> --> 
+  </div> -->
 
 
   <div class="container">
@@ -38,168 +40,321 @@
         <img src="assets/profile/profile-photo.webp" alt="me" class="photo">
         <div>
           <h1>Hi! I'm an Indie Developer</h1>
-          <div class="subtitle"><justify>Passionate about creating software applications <br>tailored to users’ needs</justify></div>
+          <div class="subtitle">
+            <justify>Passionate about creating software applications <br>tailored to users’ needs</justify>
+          </div>
         </div>
       </div>
     </header>
 
+    <div style="text-align: center;
+                opacity: 35%;
+                font-size: xx-large;">
+      (WIP)
+    </div>
+
     <div class="grid">
       <main>
+        <section class="quote">
+          <p style="font-style: italic;
+                    text-align: center;
+                    font-size: larger;
+                    font-weight: bold;
+                    padding: 3%">
+            "Our greatest weakness lies in giving up.<br>
+            The most certain way to succeed is <br>
+            always to try just one more time."<br>
+            - Thomas A. Edison
+          </p>
+        </section>
 
         <section id="about" class="card">
           <h2>About</h2>
-          <strong><p>Hi, I'm John.<p></strong>
-          <p>I’m a motivated and continuously learning software developer with a strong interest in creating applications that are <strong>practical</strong>,<strong> user-friendly</strong>, and<strong> adaptable</strong> to users’ needs. My work emphasizes <strong>usability</strong>,<strong> functionality</strong>, and <strong>reliability</strong>, and I’m committed to improving my skills through hands-on projects and industry best practices.</p>
+          <p style="font-weight: bold;">✋Hi, I'm John.</p>
+          <p>I’m a motivated and continuously learning software developer with a strong interest in creating
+            applications that
+            are <strong>practical</strong>,<strong> user-friendly</strong>, and<strong> adaptable</strong> to users’
+            needs. My
+            work emphasizes <strong>usability</strong>,<strong> functionality</strong>, and
+            <strong>reliability</strong>, and
+            I’m committed to improving my skills through hands-on projects and industry best practices.</p>
           <p>I value:</p>
-          <li><strong>User-focused design</strong> – building solutions that solve real problems.</li>
-          <li><strong>Quality code</strong> – writing maintainable and efficient applications.</li>
-          <li><strong>Growth mindset</strong> – consistently learning new frameworks, tools, and approaches.</li>
-        </section>
-
-        <section class="card">
-          <h2>Currently Learning</h2>
-          <div class="currently-learning-container">         
-              <strong><p class="p-emphasis">Programming Languages</p></strong>
-              <div class="chip-container">
-                <div class="chip"><img src="assets/icons/dart.svg" alt="Dart icon" class="chip-icon">Dart</div>
-                <div class="chip"><img src="assets/icons/csharp.svg" alt="C# icon" class="chip-icon">C#</div>
-                <div class="chip"><img src="assets/icons/cpp.svg" alt="C++ icon" class="chip-icon">C++</div>
-                <div class="chip"><img src="assets/icons/java.svg" alt="Java icon" class="chip-icon">Java</div>
-                <div class="chip"><img src="assets/icons/kotlin.svg" alt="Kotlin icon" class="chip-icon">Kotlin</div>
-                <div class="chip"><img src="assets/icons/javascript.svg" alt="JavaScript icon" class="chip-icon">JavaScript</div>
-                <div class="chip"><img src="assets/icons/python.svg" alt="Python icon" class="chip-icon">Python</div>
-              </div>
-              
-              <strong><p class="p-emphasis">Frameworks</p></strong>
-              <div class="chip-container">
-                <div class="chip"><img src="assets/icons/flutter.svg" alt="Flutter icon" class="chip-icon">Flutter</div>
-                <div class="chip"><img src="assets/icons/dotnet-maui.svg" alt=".NET MAUI icon" class="chip-icon">.NET MAUI</div>
-                <div class="chip"><img src="assets/icons/react.svg" alt="React icon" class="chip-icon">React</div>
-                <div class="chip"><img src="assets/icons/reactnative.svg" alt="React Native icon" class="chip-icon">React Native</div>
-              </div>
-              
-              <strong><p class="p-emphasis">Web Technologies</p></strong>
-              <div class="chip-container">
-                <div class="chip"><img src="assets/icons/html.svg" alt="HTML icon" class="chip-icon">HTML</div>
-                <div class="chip"><img src="assets/icons/css.svg" alt="CSS icon" class="chip-icon">CSS</div>
-              </div>
-            </div>
-        </section>
-
-        <section class="card">
-          <h2>Interests</h2>
-            <li>Cross-platform app development</li>
-            <li>OS development</li>
-            <li>Android ROMs</li>
-            <li>Low-level programming</li>
-        </section>
-
-        <section id="projects" class="card">
-          <h2>Projects (Work in Progress)</h2>
-
-          <div class="item">
-            <strong>Markly (A notes app)</strong>
-            <p>A note-taking app with the concept tailored for developers.</p>
-            <p>Features:</p>
-            <li>Add tasks and reminders directly inside your notes</li>
-            <li>Organize notes to match your projects or workflow</li>
-            <li>Lightweight, intuitive, and designed for productivity</li>
-            <li>(Still a concept): IDE integration (e.g., VS Code) for seamless access to Markly notes and reminders.</li>
-          </div>
-
-          <div class="item">
-            <strong>Zealify</strong>
-            <p>Zealify is a developer-friendly app that puts programming documentation right in your pocket. Inspired by the popular Zeal app, it lets you quickly access docsets anytime, anywhere—making coding references fast, simple, and always within reach. It’s also a great resource for students who want to learn programming directly from official documentation, without relying on AI tools.</p>
-            <p>Features:</p>
-            <li>Support for different programming languages</li>
-            <li>Download resources for offline use.</li>
-            <li>Dark theme tuned for preventing eye-strain. (specifically tuned for OLED devices.)</li>
-          </div>
-          <div class="item">
-            <strong>Musicly</strong>
-            <p>Musicly is a music app designed with Material 3, giving it a clean and modern look. It lets you enjoy and organize your favorite tracks with a simple, easy-to-use interface.</p>
-            <p>Features:</p>
-            <li>Support for editing Music Tags</li>
-            <li>Support for Synced Lyrics</li>
-            <li>"Mood Tags"</li>
-            <li>Backup and Restore</li>
-          </div>
-          <h4>For full details, check here:</h4><a href="projects.html">Check out my projects!</a>
+          <ul>
+            <li><strong>User-focused design</strong> – building solutions that solve real problems.</li>
+            <li><strong>Quality code</strong> – writing maintainable and efficient applications.</li>
+            <li><strong>Growth mindset</strong> – consistently learning new frameworks, tools, and approaches.</li>
+          </ul>
         </section>
 
         <section class="card">
           <h2>Goals</h2>
-            <li>Deepen firmware and OS knowledge</li>
-            <li>Ship cross-platform apps using Flutter</li>
-            <li>Experiment with AI code assistants</li>
+          <h3>🎯 Career Goals</h3>
+          <p>I'm a <strong>Computer Engineering student</strong> passionate about building smart and creative digital
+            experiences. With a strong foundation in C++, C# and Java, I've developed solid problem-solving and OOP
+            skills that
+            help me easily adapt to modern tools.</p>
+          <p>My goal is to grow as a software and mobile app developer, creating projects that connect technology,
+            creativity,
+            and real-world impacts. I aim to explore both software and embedded systems, bridging hardware and
+            intelligent
+            applications. In the long run, I hope to lead or collaborate on innovative tech solutions</p>
+          <!-- Revise for inclusion of hardware side of course (Computer Engineering)-->
+
+          <h4>👩‍💻 Software and App Development</h4>
+          <ul>
+            <li>Enhance my technical skills in web and app development.</li>
+            <li>Intern or work in a tech company to apply my skills in real-world projects.</li>
+          </ul>
+
+          <h4>🔧 Full-stack or Backend Engineering</h4>
+          <ul>
+            <li>Become a full-stack developer or software engineer.</li>
+            <li>Earn certifications in key technologies.</li>
+            <li>Collaborate on tech innovation projects integrating hardware and software.</li>
+          </ul>
+
+          <h4>💫 Embedded Systems / Firmware Development</h4>
+          <ul>
+            <li>Strengthen understanding of computer systems and firmware.</li>
+            <li>Contribute to AI or embedded systems and development.</li>
+            <li>Create meaningful tech products that solve real-world problems.</li>
+          </ul>
         </section>
+
 
         <section class="card">
-          <h2>Certification</h2>
-          <!-- Add certifications here in the future -->
-        </section>
+          <h2>Currently Learning</h2>
+          <div class="currently-learning-container">
+            <p class="p-emphasis">Programming Languages</p>
+            <div class="chip-container">
+              <div class="chip"><img src="assets/icons/dart.svg" alt="Dart icon" class="chip-icon">Dart</div>
+              <div class="chip"><img src="assets/icons/csharp.svg" alt="C# icon" class="chip-icon">C#</div>
+              <div class="chip"><img src="assets/icons/cpp.svg" alt="C++ icon" class="chip-icon">C++</div>
+              <div class="chip"><img src="assets/icons/java.svg" alt="Java icon" class="chip-icon">Java</div>
+              <div class="chip"><img src="assets/icons/kotlin.svg" alt="Kotlin icon" class="chip-icon">Kotlin</div>
+              <div class="chip"><img src="assets/icons/javascript.svg" alt="JavaScript icon"
+                  class="chip-icon">JavaScript</div>
+              <div class="chip"><img src="assets/icons/python.svg" alt="Python icon" class="chip-icon">Python</div>
+            </div>
 
-        <div class="card">
-          <h2>Skills</h2>
-            <li>
-              Technical Support - Providing assistance for hardware and software issues
-            </li>
-            <li>
-
-            </li>
-            <li>
-
-            </li>
-            <li>
-
-            </li>
-        </div>
-
-        <div class="card" id="contacts">
-          <h2>Contacts</h2>
-          <div class="contact-container">
-            <li>
-              <div class="contact-info-container">
-                <img src="assets/icons/gmail.svg" alt="Gmail icon" class="contact-icon">
-                <div class="contact-info">
-                  Email:
-                  <a href="mailto:johnrosales933@gmail.com">
-                    johnrosales933@gmail.com
-                  </a>
-                </div>
+            <p class="p-emphasis">Frameworks</p>
+            <div class="chip-container">
+              <div class="chip"><img src="assets/icons/flutter.svg" alt="Flutter icon" class="chip-icon">Flutter</div>
+              <div class="chip"><img src="assets/icons/dotnet-maui.svg" alt=".NET MAUI icon" class="chip-icon">.NET MAUI
               </div>
-            </li>
+              <div class="chip"><img src="assets/icons/react.svg" alt="React icon" class="chip-icon">React</div>
+              <div class="chip"><img src="assets/icons/reactnative.svg" alt="React Native icon" class="chip-icon">React
+                Native</div>
+              <div class="chip"><img src="assets/icons/expo.svg" alt="Expo icon" class="chip-icon">Expo</div>
+            </div>
+
+            <p class="p-emphasis">Web Technologies</p>
+            <div class="chip-container">
+              <div class="chip"><img src="assets/icons/html.svg" alt="HTML icon" class="chip-icon">HTML</div>
+              <div class="chip"><img src="assets/icons/css.svg" alt="CSS icon" class="chip-icon">CSS</div>
+            </div>
+          </div>
+    </div>
+    </section>
+
+    <section class="card">
+      <h2>Interests</h2>
+      <div class="interest-container">
+        <li>Cross-platform app development</li>
+        <li>OS development</li>
+        <li>Low-level programming</li>
+        <li>UI/UX Design</li>
+        <li>Web Design</li>
+      </div>
+    </section>
+
+    <section id="projects" class="card">
+      <h2>Projects (Work in Progress)</h2>
+
+      <div class="item">
+        <strong>📝Markly (A notes app)</strong>
+        <p>A note-taking app with the concept tailored for developers.</p>
+        <p>Features:</p>
+        <ul>
+          <li>Add tasks and reminders directly inside your notes</li>
+          <li>Organize notes to match your projects or workflow</li>
+          <li>Lightweight, intuitive, and designed for productivity</li>
+          <li>(Still a concept): IDE integration (e.g., VS Code, Android Studio, IntelliJ, etc.) for seamless access to
+            Markly notes and reminders.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <strong>📃Zealify</strong>
+        <p>Zealify is a developer-friendly app that puts programming documentation right in your pocket. Inspired by the
+          popular Zeal app, it lets you quickly access docsets anytime, anywhere—making coding references fast, simple,
+          and
+          always within reach. It’s also a great resource for students who want to learn programming directly from
+          official
+          documentation, without relying on AI tools.</p>
+        <p>Features:</p>
+        <ul>
+          <li>Support for different programming languages</li>
+          <li>Download resources for offline use.</li>
+          <li>Dark theme tuned for preventing eye-strain. (specifically tuned for OLED devices.)</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <strong>🎧Musicly</strong>
+        <p>Musicly is a music app designed with Material 3, giving it a clean and modern look. It lets you enjoy and
+          organize your favorite tracks with a simple, easy-to-use interface.</p>
+        <p>Features:</p>
+        <ul>
+          <li>Support for editing Music Tags</li>
+          <li>Support for Synced Lyrics</li>
+          <li>"Mood Tags"</li>
+          <li>Backup and Restore</li>
+        </ul>
+      </div>
+
+      <p>For full details, check here:</p><a href="projects.html">Check out my projects!</a>
+    </section>
+
+    <section class="card">
+      <h2>Education</h2>
+      <div>
+        <h4>Course/s:</h4>
+        <ul>
+          <li>Bachelor of Science in Computer Engineering
+        </ul>
+        </li>
+      </div>
+    </section>
+
+
+
+    <section class="card">
+      <h2>Certification</h2>
+      <!-- Add certifications here in the future -->
+    </section>
+
+    <section class="card">
+      <h2>Skills</h2>
+      <div class="skills-container">
+        <ul>
+          <div class="item">
             <li>
-              <div class="contact-info-container">
-                <img src="assets/icons/github.svg" alt="GitHub icon" class="contact-icon">
-                <div class="contact-info">
-                  GitHub:
-                  <a href="https://github.com/jhnrs" target="_blank" rel="noopener noreferrer">
-                    github.com/jhnrs
-                  </a>
+              <details open>
+                <summary>Technical Support</summary>
+                <div class="details-content">
+                  Able to assist users for hardware and software issues. <!-- try to emphasize skill even further. -->
                 </div>
-              </div>
-            </li>
-            <li>
-              <div class="contact-info-container">
-                <img src="assets/icons/linkedin.svg" alt="LinkedIn icon" class="contact-icon">
-                <div class="contact-info">
-                  LinkedIn:
-                  <a href="https://www.linkedin.com/in/justjohn07" target="_blank" rel="noopener noreferrer">
-                    linkedin.com/in/justjohn07
-                  </a>
-                </div>
-              </div>
+              </details>
             </li>
           </div>
-        </div>
 
-      </main>
-    </div>
+          <div class="item">
+            <li>
+              <details open>
+                <summary>Computer Maintenance</summary>
+                <div class="details-content">
+                  Able to diagnose, repair, and optimize system performance.
+                  <!-- try to emphasize skill even further. -->
+                </div>
+              </details>
+            </li>
+          </div>
 
-    <footer>© John — My Portfolio</footer>
+          <div class="item">
+            <li>
+              <details open>
+                <summary>Project Management</summary> <!-- is this skill really relevant? -->
+                <div class="details-content">
+                  Able to handle, plan, organize academic and personal projects.
+                </div>
+              </details>
+            </li>
+          </div>
+
+          <div class="item">
+            <li>
+              <details open>
+                <summary>Research Skills</summary>
+                <div class="details-content">
+                  Able to evaluate credible sources and compare technologies for effective solutions.
+                </div>
+              </details>
+            </li>
+          </div>
+
+          <div class="item">
+            <li>
+              <details open>
+                <summary>Analytical Skills</summary>
+                <div class="details-content">
+                  Apply logical thinking to problem-solving and system analysis.
+                </div>
+              </details>
+            </li>
+          </div>
+
+          <div class="item">
+            <li>
+              <details open>
+                <summary>Software Troubleshooting</summary>
+                <div class="details-content"> <!-- this skill may be redundant to "Computer Maintenance"-->
+                  Able to identify and resolve software-related issues.
+                </div>
+              </details>
+            </li>
+
+          </div>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card" id="contacts">
+      <h2>Contacts</h2>
+      <div class="contact-container">
+        <li>
+          <div class="contact-info-container">
+            <img src="assets/icons/gmail.svg" alt="Gmail icon" class="contact-icon">
+            <div class="contact-info">
+              Email:
+              <a href="mailto:johnrosales933@gmail.com">
+                johnrosales933@gmail.com
+              </a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="contact-info-container">
+            <img src="assets/icons/github.svg" alt="GitHub icon" class="contact-icon">
+            <div class="contact-info">
+              GitHub:
+              <a href="https://github.com/jhnrs" target="_blank" rel="noopener noreferrer">
+                github.com/jhnrs
+              </a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="contact-info-container">
+            <img src="assets/icons/linkedin.svg" alt="LinkedIn icon" class="contact-icon">
+            <div class="contact-info">
+              LinkedIn:
+              <a href="https://www.linkedin.com/in/justjohn07" target="_blank" rel="noopener noreferrer">
+                linkedin.com/in/justjohn07
+              </a>
+            </div>
+          </div>
+        </li>
+      </div>
+    </section>
+
+    </main>
   </div>
-  
-  <script src="content.js"></script>
+
+  <footer>© John — My Portfolio</footer>
+  </div>
+
+  <script src="index-content.js"></script>
 </body>
+
 </html>

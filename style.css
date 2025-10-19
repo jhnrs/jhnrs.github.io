@@ -1,6 +1,12 @@
 /* All comments made to this file are for "remembrance" purposes or others */
 /* Use with Chrome DevTools*/
 
+/* for easy distinction of
+different elements/components
+for div tag */
+/* div {
+  border:1px solid rgba(17, 185, 183, 0.719);
+} */
 
 :root {
   --background: rgba(#0ea5a3);
@@ -19,7 +25,7 @@ html {
   height: 100vh;
   height: 100dvh;
   height: -webkit-fill-available;
-  background: var(--bg-gradient);/* linear-gradient(135deg, #000428, #2c1a4d); */
+  background: var(--bg-gradient); /* linear-gradient(135deg, #000428, #2c1a4d); */
   scroll-behavior: smooth; /* For smooth scrolling effect selecting items in navigations, except for another page links */
 }
 /* ---------------------------------------------------------------- */
@@ -51,7 +57,7 @@ body::after {
   left: 0;
   width: 100%;
   height: 150px;
-  background: linear-gradient(135deg, #000428, #2c1a4d);
+  background: linear-gradient(135deg, #000428, #0f091b);
   z-index: -1;
 }
 
@@ -84,7 +90,7 @@ html, body {
   }
 }
 
-.header, .card {
+.header, .card, .quote {
   opacity: 0;
   animation: fadeInUp 0.6s ease-in-out forwards;
 }
@@ -98,9 +104,16 @@ html, body {
 /* -------------------------------------------------------------------- */
 
 .container {
-  max-width: 980px;
+  max-width: 1000px;
   margin: 30px auto;
   padding: 80px 28px 28px;
+
+  /* from another .container property */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+/*   margin: 10px auto;
+  padding: 10px 16px; */
 }
 
 /* Navigation */
@@ -121,7 +134,8 @@ html, body {
   text-align: center;
   gap: 24px;
   padding: 20px;
-  width: calc(50vw + 100px); /* Tip: use Calc function for easier calculations depending on screen size */
+  width: 90%; /* Tip: use Calc function for easier calculations depending on screen size */
+  max-width: 500px;
 
   opacity: 0;
   animation: fadeIntoView 1s ease forwards;
@@ -139,14 +153,18 @@ html, body {
 
 /* Header */
 .profile-section {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  margin: 50px auto 50px;
   gap: 14px;
   align-items: center;
 }
 
 .photo {
   z-index: -1;
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   background: linear-gradient(135deg, var(--accent), #7c3aed);
   border-radius: 16px;
   font-weight: 700;
@@ -160,14 +178,35 @@ html, body {
   text-align: center;
 }
 
-h1, h2, h3 {
+h1 {
+  text-align: center;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   padding: 10px 30px; /* padding: top right bottom left */
-  margin: 0px 10px 10px 10px;
-  text-align: center;
+  margin: 0px auto 10px;
+  width: fit-content;
+  justify-content: center;
+}
 
+h2 {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  padding: 10px 30px; /* padding: top right bottom left */
+  margin: 0px auto 10px;
+  /* width: fit-content; */
+  justify-content: center;
+}
+
+h3, h4 {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  padding: 10px 15px; /* padding: top right bottom left */
+  margin: 20px 0px 10px;
+  width: fit-content;
 }
 
 .subtitle {
@@ -188,16 +227,16 @@ h1, h2, h3 {
 }
 
 /*----------------------------------------------------*/
-
-.container .card {
+.card {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 24px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   padding: 30px;
   margin: 15px 5px;
 }
+
 .card li {
-  margin: 6px 18px;
+  margin: 6px 0px;
 }
 
 /*----------------------------------------------------*/
@@ -206,11 +245,9 @@ h1, h2, h3 {
   text-align: center;
 }
 .p-emphasis {
-  /* background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); */
-  padding: 10px 30px;
-  margin: 0px 20px;
+  padding: 10px 0px;
+  margin: 0px 0px; /* before: margin: 0px 20px; */
+  font-weight: bold;
 }
 .chip-container {
   margin: 0px 0px;
@@ -238,7 +275,16 @@ h1, h2, h3 {
   gap: 6px;
   white-space: nowrap;
   box-sizing: border-box;
-  transition: background-color 0.2s;
+  transition: ease 0.2s, box-shadow 0.2s, transform 0.3s;
+}
+.chip:hover {
+  cursor: pointer;
+  background: rgba(14, 165, 163, 0.15);
+  box-shadow: 0 0 20px rgba(17, 185, 183, 0.719);
+  transform: scale(1.05);
+}
+.chip:not(:hover) {
+  transition: ease 0.2s, box-shadow 0.2s, transform 0.3s;
 }
 .chip-icon {
   width: 23px;
@@ -248,14 +294,12 @@ h1, h2, h3 {
   display: inline-block;
   object-fit: contain;
 }
-.chip:hover {
-  background: rgba(14, 165, 163, 0.15);
-}
 
-/* FROM .projects-title: display: flex; */ /* Edited: doesn't center the title as it conflicts with <center> tag */
 
 .card .item {
   border-left: 7px solid var(--accent);
+  /* border: 2px solid var(--accent); */
+  border-radius: 16px;
   padding: 10px 12px;
   margin-bottom: 10px;
   transition: ease 0.2s, box-shadow 0.2s, transform 0.3s;
@@ -266,19 +310,110 @@ h1, h2, h3 {
   padding: 10px 16px; /* padding: top right bottom left */
   margin: 10px 0;
   box-shadow: 0 0 20px rgba(17, 185, 183, 0.719);
-  transform: scale(1.03);
+  transform: scale(1.01);
 }
 .card .item:not(:hover) { /* opposite of :hover is just use :not(:hover) */
   transition: ease 0.2s, box-shadow 0.2s, transform 0.3s;
 }
+
+.skills-container ul {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.skills-container summary {
+  list-style-type: none;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .skills-container ul{
+  display: grid;
+  grid-template-columns: 100%;
+  }
+}
+
 /* ---------------------------------------------------------------------- */
+
+.interest-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.interest-container li{
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  margin: 6px 35px;
+  transition: box-shadow 0.2s, transform 0.3s, background-color 0.3s;
+}
+.interest-container li:hover {
+  background: rgba(14, 165, 163, 0.15);
+  box-shadow: 0 0 20px rgba(17, 185, 183, 0.719);
+  transform: scale(1.05);
+}
+@media (max-width: 768px) {
+  .interest-container {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+}
+/* ---------------------------------------------------------------------- */
+
+/* details .details-content {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.3s ease,
+              opacity 0.3s ease;
+}
+
+
+details[open] .details-content:hover {
+  max-height: 100%;
+  opacity: 1;
+} */
+/* ---------------------------------------------------------------------- */
+.contact-container {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+
+
+
+/*   display: flex;
+  flex-direction: column; */
+}
+@media (max-width: 768px) {
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 100%;
+
+    gap: 0px;
+  }
+  .contact-container li {
+    gap: 3px;
+  }
+
+  .contact-info-container li {
+    margin: 0;
+    padding: 0;
+    gap: 6px;
+  }
+}
+
 .contact-container li {
-  display: flex;
-  flex-direction: column;
+  margin: 0px auto 0px;
+  padding: 10px;
+  width: 278px;
+  list-style-type: none;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
 }
+
 .contact-icon {
   width: 46px;
   height: 46px;
@@ -288,17 +423,18 @@ h1, h2, h3 {
   object-fit: contain;
 }
 .contact-info-container {
+  overflow: hidden;
   display: inline-flex;
   flex-direction: row;
   align-items: center;
   justify-content: left;
-  max-width: 18rem;
+  max-width: 278px;
   height: 60px;
   width: 100%;
-  padding: 10px 20px;
+  padding: 10px 15px;
   background: rgba(255, 255, 255, 0.08);
   border-radius: 15px;
-  margin: 6px 0 0 0;
+  margin: 0px 0 0 0;
   font-size: 0.92rem;
   font-weight: 500;
   gap: 6px;
@@ -387,29 +523,20 @@ padding-right: 35px; */
   }
 
   .container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    margin: 10px auto;
-    padding: 60px 16px;
+    padding-top: 60px;
   }
 
   .container .card {
-    padding: 30px 20px;
     margin: 10px 0;
   }
   
   
   .profile-section {
+    display: flex;
+    flex-direction: column;
     align-content: center;
     text-align: center;
     gap: 10px;
-  }
-  
-  .card-skills li {
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
   }
   
   .bar {
@@ -442,10 +569,43 @@ padding-right: 35px; */
   }
 }
  */
-
+/* ----------------------------------------------------------------- */
 /* For certifications.html */
 
-.cert-container {
+.certs-body {
+  max-width: 980px;
+  margin: 30px auto;
+  padding: 40x 28px 28px;
+}
+.certs-container {
   text-align: center;
   padding: 10px;
 }
+
+.seminars-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+}
+.pdf-viewer {
+  justify-content: center;
+  align-items: center;
+}
+
+/* .pdf-viewer iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+} */
+
+/* ----------------------------------------------------------------- */
+/* For projects.html */
+.projects-container {
+  padding: 10px;
+}
+
+/* ----------------------------------------------------------------- */
