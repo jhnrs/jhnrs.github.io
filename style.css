@@ -442,7 +442,7 @@ details[open] .details-content:hover {
   box-sizing: border-box;
   transition: box-shadow 0.2s, transform 0.3s;
 }
-.contact-info-container .contact-info {
+.contact-info-container .contact-info-text {
   text-align: left;
   display: inline-flex;
   flex-direction: column;
@@ -499,11 +499,74 @@ footer {
   }
 }
 
+
+@media (max-width: 375px) {
+  .container {
+    max-width: fit-content;
+    padding: 60px 28px 28px;
+  }
+  .card {
+    max-width: 100%;
+  }
+  .contact-container {
+
+  }
+  .contact-container li {
+    display: flex;
+    flex-direction: row;
+    max-width: fit-content;
+    display: flex;
+    
+  }
+  .contact-container {
+    margin: 0px auto;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: center;
+    align-self: center;
+  }
+
+  .contact-info-container {
+    max-width: fit-content;
+    gap: 0px;
+  }
+
+  .contact-info-text {
+    content-visibility: hidden;
+  }
+}
 /* This enclosed part is for mobile devices. */
 /* flex-direction: column; */
 /* padding: top right bottom left */
 /* padding-left: 35px;
 padding-right: 35px; */
+
+@media (max-width: 320px) {
+  .card {
+    max-width: 100%;
+  }
+
+  .contact-container li {
+    max-width: fit-content;
+    display: flex;
+  }
+  .contact-container {
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-info-container {
+    max-width: fit-content;
+    gap: 0px;
+  }
+
+  .contact-info-text {
+    content-visibility: hidden;
+  }
+}
+
 
 @media (max-width: 768px) {
   .header {
@@ -516,13 +579,18 @@ padding-right: 35px; */
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    padding: 15px 20px;
+    padding: auto;
     gap: 16px;
     width: 90%;
     max-width: 500px;
   }
 
+  .card {
+    padding: auto;
+    margin: auto;
+  }
   .container {
+    max-width: 100%;
     padding-top: 60px;
   }
 
@@ -543,32 +611,6 @@ padding-right: 35px; */
     margin-left: 0;
   }
 }
-
-
-/* @media (max-width: 425px) {
-    .header {
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    padding: 15px 20px;
-    gap: 16px;
-    width: calc(50vw + 100px);
-    position: absolute;
-  }
-
-  body {
-    justify-content: center;
-    align-items: center;
-  }
-}
- */
 /* ----------------------------------------------------------------- */
 /* For certifications.html */
 
