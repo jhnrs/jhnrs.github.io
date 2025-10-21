@@ -134,7 +134,7 @@ html, body {
   backdrop-filter: blur(10px);
   justify-content: space-evenly;
   text-align: center;
-  gap: 24px;
+  gap: 14px;
   padding: 20px;
   width: 90%; /* Tip: use Calc function for easier calculations depending on screen size */
   max-width: fit-content;
@@ -580,7 +580,7 @@ padding-right: 35px; */
     flex-wrap: wrap;
     flex-direction: row;
     padding: auto;
-    gap: 16px;
+    gap: 11px;
   }
 
   .card {
