@@ -1,0 +1,55 @@
+    {
+        "Dart": {
+            "programmingLanguageName": "Dart",
+            "description": "A client-optimized language by Google for fast apps on any platform, powering Flutter",
+            "webLink": "https://dart.dev",
+            "webLabel": "dart.dev"
+        },
+        "C#": {
+            "programmingLanguageName": "C#",
+            "description": "A modern, object-oriented language from Microsoft for building apps across web, deskopm cloud, and mobile using .NET.",
+            "webLink": "https://learn.microsoft.com/dotnet/csharp",
+            "webLabel": "learn.microsoft.com"
+        },
+        "C++": {
+            "programmingLanguageName": "C++",
+            "description": "A powerful general-purpose language for systems, game engines, and performance-critical applications.",
+            "webLink": "https://isocpp.org",
+            "webLabel": "isocpp.org"
+        },
+        "Java": {
+            "programmingLanguageName": "Java",
+            "description": "A class-based, object-oriented language designed for portability and reliability, widely used in enterprise and Android development",
+            "webLink": "https://oracle.com/java",
+            "webLabel": "oracle.com/java"
+        },
+        "Kotlin": {
+            "programmingLanguageName": "Kotlin",
+            "description": "A modern, concise language fully interoperable with Java, officially supported for Android development.",
+            "webLink": "https://kotlinlang.org",
+            "webLabel": "kotlinlang.org"
+        },
+        "JavaScript": {
+            "programmingLanguageName": "JavaScript",
+            "description": "The core scripting language of the web, enabling interactivity and dynamic behavior in webpages and applications.",
+            "webLink": "https://developer.mozilla.org/js",
+            "webLabel": "developer.mozilla.org/js"
+        },
+        "Python": {
+            "programmingLanguageName": "Python",
+            "description": "A high-level, easy-to-read langauge used for thev web, data science, AI, and automation.",
+            "webLink": "https://python.org",
+            "webLabel": "python.org"
+        },
+
+
+
+        "Flutter": {
+        "frameworkName": "Flutter",
+        "description": "Google's open-source UI toolkit for building natively compiled applications for mobile, web, and desktop from one codebase.",
+        "webLink": "https://flutter.dev",
+        "webLabel": "flutter.dev"
+    }
+
+}
+

@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#0f172a">
   <title>(WIP) Jhnrs — Certifications</title>
+  <link rel="stylesheet" href="node_modules/aos/dist/aos.css">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
     <nav class="nav">
-        <a href="index.html">My Profile</a>
+        <a href="index.html">Profile</a>
     </nav>
 
     
@@ -22,30 +23,31 @@
     >
       (WIP)
     </div>
-
-        <div class="certs-body">
-            <div class="card">
+        <div class="container">
+            <section class="content-box" data-aos="fade-up">
                 <h2>Certifications</h2>
                 <div class="certs-container">
                     <p>Nothing yet...</p>
                 </div>
-            </div>
+            </section>
 
-        <div>
-            <div class="card">
+            <section class="content-box" data-aos="fade-up">
                 <h2>Seminars</h2>
-                    <div class="seminars-container">
-                        <div class="pdf-viewer">
-                            <!-- <iframe src="assets\certificates\John B. Rosales.pdf"frameborder="1"></iframe> -->
-                        </div>
-                        <!-- <p>Nothing yet...</p> -->
+                <div class="seminars-container">
+                    <div class="pdf-viewer">
+                        <!-- <iframe src="assets\certificates\John B. Rosales.pdf"frameborder="1"></iframe> -->
                     </div>
-            </div>
-        </div>
+                    <!-- <p>Nothing yet...</p> -->
+                </div>
+            </section>
         </div>
     </main>
-    <footer>© John — My Portfolio</footer>
 
+    <footer>© John — My Portfolio</footer>
+    <script src="node_modules/aos/dist/aos.js"></script>
+    <script>
+      AOS.init();
+      </script>
     <script src="certifications-content.js" defer></script>
 </body>
 </html>

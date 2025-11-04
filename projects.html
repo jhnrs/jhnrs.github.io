@@ -1,24 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-        <meta name="theme-color" content="#0f172a">
-        <title>Jhnrs - Projects</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    </head>
 
-    <body>
-        <nav class="nav">
-            <a href="index.html">Home</a>
-            <a href="certifications.html">Certifications</a>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0f172a">
+    <title>(WIP) Jhnrs - Projects</title>
+    <link rel="stylesheet" href="node_modules/aos/dist/aos.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
 
-        </nav>
-        <main>
-            <div class="card">
-                
-            </div>
-        </main>
-    </body>
+<body>
+    <nav class="nav">
+        <a href="index.html">My Profile</a>
+        <a href="certifications.html">Certifications</a>
+    </nav>
+
+    <main>
+        <div class="container">
+
+            <section class="content-box" data-aos="fade-up">
+                <h2>My Ongoing Projects</h2>
+                <div class="projects-container">
+                    <p style="text-align: center; color: var(--muted);">Note: App names may subject to change</p>
+                    
+                    <div class="item" data-aos="fade-up">
+                        <h3>📝Markly (A notes app)</h3>
+                        <p style="font-weight: bold;">Introduction</p>
+                        <p>A notes app that uses Markdown syntax stailored for developers.</p>
+                        <p style="font-weight: bold;">Features:</p>
+                        <ul>
+                            <li>Add tasks and reminders directly inside your notes</li>
+                            <li>Organize notes to match your projects or workflow</li>
+                            <li>Lightweight, intuitive, and designed for productivity</li>
+                            <li>On-device AI integration for searching.</li>
+                            <li>(Still a concept): IDE integration (e.g., VS Code, Android Studio, IntelliJ, etc.) for seamless access to
+                                Markly notes and reminders.</li>
+                        </ul>
+
+                        <p style="font-weight: bold;">Why create this app?</p>
+                        <p></p>
+                    </div>
+
+                    <div class="item" data-aos="fade-up">
+                        <h3>🎧Musicly</h3>
+                        <p style="font-weight: bold;">Introduction</p>
+                        <p>a Music app designed with Material 3, giving it a clean and modern look. It lets you enjoy and
+                            organize your favorite tracks with a simple, easy-to-use interface.</p>
+                        <p style="font-weight: bold;">Features:</p>
+                        <ul>
+                            <li>Support for editing Music Tags</li>
+                            <li>Support for Synced Lyrics</li>
+                            <li>"Mood Tags" — group your songs according to what they make you feel.</li>
+                            <li>Backup support</li>
+
+                        </ul>
+
+                        <p style="font-weight: bold;">Why create this app?</p>
+                    </div>
+
+                    <div class="item" data-aos="fade-up">
+                        <h3>📃Zealify</h3>
+                        <p style="font-weight: bold;">Introduction</p>
+                        <p>Zealify brings the power of developer documentation browsing—originally inspired by the popular desktop app Zeal—to
+                            mobile and cross-platform environments. With Zealify, developers an access, search, and reference documentation
+                            anytime, anywhere, without needing an internet connection.</p>
+                        <p> It’s also a great resource for students who want to learn programming directly from
+                            official
+                            documentation, without relying on AI tools.</p>
+                        <p style="font-weight: bold;">Features:</p>
+                        <ul>
+                            <li>On-device AI integration for ease of use enhancing in searches, summaries, etc.</li>
+                            <li>Support for different programming languages.</li>
+                            <li>Download resources for offline use.</li>
+                            <li>Dark theme tuned for preventing eye-strain. (specifically tuned for OLED devices.)</li>
+                        </ul>
+
+                        <p style="font-weight: bold;">Why create this app?</p>
+                    </div>
+
+                    </div>
+            </section>
+
+        </div>
+    </main>
+    <script src="node_modules/aos/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
 </html>

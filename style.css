@@ -10,6 +10,7 @@ for div tag */
 
 :root {
   --background: rgba(#0ea5a3);
+  --my-test-new-bg: rgba(#272727);
   --bg-gradient: linear-gradient(135deg, #0f172a, #1e293b, #1a1946, #1e0720);
   --text: #e6eef6;
   --muted: #94a3b8;
@@ -18,7 +19,16 @@ for div tag */
 }
 
 * {
+  /* font-size: 1em; */
   box-sizing: border-box;
+  text-wrap: wrap;
+}
+
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 html {
@@ -32,7 +42,7 @@ html {
 /* ---------------------------------------------------------------- */
 /* Some tweaks for navigation selection */
 #about, #projects {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 130px;
 }
 /* ---------------------------------------------------------------- */
 
@@ -45,8 +55,8 @@ body {
   min-height: 100vh;
   min-height: 100dvh;
   min-height: -webkit-fill-available;
-  cursor: default; /* For the cursor (for Desktops) to not trigger its text Icon/mode */
-  /* user-select: none; */ /* This property is useful for making the page non-selectable "???" */
+  cursor: default; /* For the cursor, for Desktops, to not trigger its "Text Icon" mode */
+  user-select: none; /* This property is useful for making the page non-selectable "???" */
 }
 
 /* Fill any viewport gaps on mobile */
@@ -57,31 +67,29 @@ body::after {
   top: 100dvh;
   left: 0;
   width: 100%;
-  height: 150px;
+  height: 100%; /* value before 150px */
   background: linear-gradient(135deg, #000428, #0f091b);
   z-index: -1;
 }
-
-html, body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-/* -------------------------------------------------------------------- */
+/* ==================================================================================== */
 /* For Animations (still in testing) */
 /* there's JS code reliance */
 
-@keyframes fadeInUp {
-  from {
+
+/* just for the blinking cursor */
+.cursor {
+  display: inline-block;
+  background-color: #fff;
+  margin-left: 1px;
+  animation: cursorBlink 0.7s steps(1) infinite;
+}
+@keyframes cursorBlink {
+  50% {
     opacity: 0;
-    /* transform: translateY(20px); */
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
+/* This is used */
 @keyframes fadeIntoView {
   from {
     opacity: 0
@@ -91,41 +99,34 @@ html, body {
   }
 }
 
-.header, .card, .quote {
-  opacity: 0;
-  animation: fadeInUp 0.6s ease-in-out forwards;
-}
-
-/* -------------------------------------------------------------------- */
-/* .loader1 { for splash screen
-  text-align: center;
-  opacity: 0;
-  animation: fadeInUp 0.6s ease forwards;
-} */
-/* -------------------------------------------------------------------- */
+/* ======================================================================================== */
 
 .container {
-  max-width: 1000px;
+  max-width: 100%;
   margin: 30px auto;
-  padding: 80px 28px 28px;
-
-  /* from another .container property */
+  padding: 80px 10px 28px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-/*   margin: 10px auto;
-  padding: 10px 16px; */
 }
 
 /* Navigation */
+.nav-card a{
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+}
 .nav {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   position: fixed;
   margin: 0px auto;
   top: 15px;
   left: 0;
   right: 0;
+  /* bottom: 15px; */ /* For setting as "bottom" navigation */
   z-index: 100;
   outline: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
@@ -156,15 +157,15 @@ html, body {
 /* Header */
 .profile-section {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   justify-content: center;
+  padding: 50px auto;
   margin: 50px auto 50px;
   gap: 14px;
   align-items: center;
 }
 
 .photo {
-  z-index: -1;
   width: 200px;
   height: 200px;
   background: linear-gradient(135deg, var(--accent), #7c3aed);
@@ -179,6 +180,16 @@ html, body {
   justify-content: center;
   text-align: center;
 }
+.quote {
+  font-style: italic;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.80em;
+  font-weight: bold;
+  padding: 3%;
+  max-width: 75%;
+  margin: 0 auto;
+}
 
 h1 {
   text-align: center;
@@ -187,7 +198,7 @@ h1 {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   padding: 10px 30px; /* padding: top right bottom left */
   margin: 0px auto 10px;
-  width: fit-content;
+  width: 500px;
   justify-content: center;
 }
 
@@ -215,37 +226,57 @@ h3, h4 {
   color: var(--muted);
   margin-top: 6px;
   margin-bottom: 30px;
-  text-align: center;
 }
 
 /* Layout */
 .grid {
-  display: flex; /* prev display: grid; */
+  display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  /* grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  columns: 2;
-  gap: 20px; */
+  /* flex-wrap: wrap; */
 }
 
 /*----------------------------------------------------*/
-.card {
+.content-box {
+  max-width: 70%;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 24px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   padding: 30px;
-  margin: 15px 5px;
+  margin: 8px auto;
 }
 
-.card li {
+.content-box li {
   margin: 6px 0px;
 }
 
 /*----------------------------------------------------*/
 /* Content Elements */
+.content-box-divider {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.content-box-divider .currently-learning-container {
+  flex: 1;
+}
+.content-box-divider .right {
+  justify-content: center;
+  content-visibility: visible;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+}
+
 .currently-learning-container {
   text-align: center;
 }
+.chip-info {
+  display: flex;
+  flex-direction: column;
+  max-width: fit-content;
+  max-height: fit-content;
+}
+
 .p-emphasis {
   padding: 10px 0px;
   margin: 0px 0px; /* before: margin: 0px 20px; */
@@ -264,8 +295,8 @@ h3, h4 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 80px;
-  max-width: 120px;
+/*   min-width: 80px;
+  max-width: 120px; */
   height: 30px;
   width: fit-content;
   padding: 0 8px;
@@ -288,6 +319,11 @@ h3, h4 {
 .chip:not(:hover) {
   transition: ease 0.2s, box-shadow 0.2s, transform 0.3s;
 }
+.chip.active {
+  background: rgba(14, 165, 163, 0.15);
+  box-shadow: 0 0 20px rgba(17, 185, 183, 0.719);
+  transform: scale(1.05);
+}
 .chip-icon {
   width: 23px;
   height: 23px;
@@ -298,16 +334,18 @@ h3, h4 {
 }
 
 
-.card .item {
+.content-box .item {
+  background: rgba(255, 255, 255, 0.05);
   border-left: 7px solid var(--accent);
   box-shadow: #000428;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* the inherit value is useful for inheriting values from the parent class (If I'm correct) (from .card {}) */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* the inherit value is useful for inheriting values from the parent class (If I'm correct) (from
+  .content-box {}) */
   border-radius: 16px;
   padding: 10px 12px;
-  margin-bottom: 10px;
+  margin: 5px;
   transition: ease 0.2s, box-shadow 0.2s, transform 0.3s;
 }
-.card .item:hover {
+.content-box .item:hover {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 16px;
   padding: 10px 16px; /* padding: top right bottom left */
@@ -315,7 +353,7 @@ h3, h4 {
   box-shadow: 0 0 20px rgba(17, 185, 183, 0.719);
   transform: scale(1.01);
 }
-.card .item:not(:hover) { /* opposite of :hover is just use :not(:hover) */
+.content-box .item:not(:hover) { /* opposite of :hover is just use :not(:hover) */
   transition: ease 0.2s, box-shadow 0.2s, transform 0.3s;
 }
 
@@ -330,12 +368,6 @@ h3, h4 {
 .skills-container summary {
   list-style-type: none;
   font-weight: bold;
-}
-@media (max-width: 768px) {
-  .skills-container ul{
-  display: grid;
-  grid-template-columns: 100%;
-  }
 }
 
 /* ---------------------------------------------------------------------- */
@@ -357,12 +389,6 @@ h3, h4 {
   background: rgba(14, 165, 163, 0.15);
   box-shadow: 0 0 20px rgba(17, 185, 183, 0.719);
   transform: scale(1.05);
-}
-@media (max-width: 768px) {
-  .interest-container {
-    display: grid;
-    grid-template-columns: 100%;
-  }
 }
 /* ---------------------------------------------------------------------- */
 
@@ -388,24 +414,6 @@ details[open] .details-content:hover {
 
 /*   display: flex;
   flex-direction: column; */
-}
-@media (max-width: 768px) {
-  .contact-container {
-    display: flex;
-    flex-direction: column;
-    grid-template-columns: 100%;
-
-    gap: 0px;
-  }
-  .contact-container li {
-    gap: 3px;
-  }
-
-  .contact-info-container li {
-    margin: 0;
-    padding: 0;
-    gap: 6px;
-  }
 }
 
 .contact-container li {
@@ -454,30 +462,14 @@ details[open] .details-content:hover {
   box-shadow: 0 0 20px rgba(17, 185, 183, 0.719);
   transform: scale(1.05);
 }
-/* using display: flex makes the other "property" align-items: center; to be at center. */
+
 /* ---------------------------------------------------------------------- */
-
-/* .bar {
-  height: 10px;
-  width: 100px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 999px;
-  overflow: hidden;
-  margin-left: 10px;
-}
-.bar span {
-  display: block;
-  height: 100%;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--accent), #7c3aed);
-}
- */
-
 
 /* Links */
 a {
   color: var(--accent);
   text-decoration: none;
+  font-weight: 500;
 }
 
 a:hover {
@@ -495,20 +487,13 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 880px) {
-  .grid {
-    grid-template-columns: 1fr;
-    justify-content: center;
-  }
-}
-
-
 @media (max-width: 375px) {
   .container {
-    max-width: fit-content;
-    padding: 60px 28px 28px;
+    max-width: 100%;
+    /* padding: 60px 10px 28px; */
   }
-  .card {
+
+  .content-box {
     max-width: 100%;
   }
   .contact-container li {
@@ -535,26 +520,36 @@ footer {
   .contact-info-text {
     content-visibility: hidden;
   }
+
+  .content-box-divider {
+    display: flex;
+    flex-direction: column;
+  }
 }
 /* This enclosed part is for mobile devices. */
-/* flex-direction: column; */
-/* padding: top right bottom left */
-/* padding-left: 35px;
-padding-right: 35px; */
 
 @media (max-width: 320px) {
-  .card {
+
+  .container {
+    gap: 4px;
     max-width: 100%;
+    /* padding: 80px 10px 28px; */
+  }
+
+  .content-box  {
+    max-width: 100%;
+    margin: 10px auto;
   }
 
   .contact-container li {
     max-width: fit-content;
     display: flex;
+    padding: 5px;
   }
   .contact-container {
     margin: 0px auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .contact-info-container {
@@ -574,39 +569,70 @@ padding-right: 35px; */
     align-items: center;
     justify-content: center;
   }
-  
+  /* 
   .nav {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     padding: auto;
     gap: 11px;
-  }
+  } */
 
-  .card {
-    padding: auto;
-    margin: auto;
-  }
-  .container {
+/* 
+.content-box  {
+    margin: 0 auto;
     max-width: 100%;
+  } */
+  /* .container {
+    margin: 0 auto;
     padding-top: 60px;
-  }
+  } */
 
-  .container .card {
-    margin: 10px 0;
+  .content-box-divider {
+    display: flex;
+    flex-direction: column;
   }
   
+  .skills-container ul{
+  display: grid;
+  grid-template-columns: 100%;
+  }
   
   .profile-section {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-content: center;
     text-align: center;
     gap: 10px;
+    padding: 0 10px;
+    margin: 0 auto;
+    height: 230px;
   }
-  
-  .bar {
-    margin-left: 0;
+  .photo {
+  width: 100px;
+  height: 100px;
+  /* object-fit: cover; */
+}
+
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 100%;
+    gap: 0px;
+  }
+  .contact-container li {
+    gap: 3px;
+  }
+
+  .contact-info-container li {
+    margin: 0;
+    padding: 0;
+    gap: 6px;
+  }
+
+  .interest-container {
+    display: grid;
+    grid-template-columns: 100%;
   }
 }
 /* ----------------------------------------------------------------- */

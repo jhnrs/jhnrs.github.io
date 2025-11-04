@@ -1,1 +1,16 @@
 create splash screen animation for web page.
+
+
+old data (objects) from cert-files.json
+
+/*     "assets/certificates/John B. Rosales.pdf",
+    "assets/certificates/JOHN B. ROSALES(signed).pdf",
+    "assets/certificates/John Rosales_Certificate of Participation_April 5, 2025.pdf",
+    "assets/certificates/John Rosales_Certificate of Participation_June 7, 2025.pdf",
+    "assets/certificates/John Rosales_Certificate of Participation_March 22, 2025.pdf",
+    "assets/certificates/John Rosales_Certificate of Participation_March 29, 2025.pdf",
+    "assets/certificates/John_B__Rosales_6658404c07f1cba581460c23.pdf",
+    "assets/certificates/MPEG1_JOHN_B_ROSALES.pdf",
+    "assets/certificates/ROSALES John 1st.pdf",
+    "assets/certificates/RVILC05_Certificate of Completion_John B. Rosales(sgd).pdf",
+    "assets/certificates/RVILCep06 Certificate of Completion_John B. Rosales(sgd).pdf" */
