@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#0f172a">
   <title>(WIP) Jhnrs — Portfolio</title>
-  <link rel="stylesheet" href="/node_modules/aos/dist/aos.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
@@ -106,9 +106,9 @@
             <div class="currently-learning-container">
               <p class="p-emphasis">Programming Languages</p>
               <div class="chip-container">
-                <div class="chip" id="Dart"><img src="assets/icons/dart.svg" alt="Dart icon" class="chip-icon">Dart
+                <div class="chip" id="Dart" onclick="chipContent(this)"><img src="assets/icons/dart.svg" alt="Dart icon" class="chip-icon">Dart
                 </div>
-                <div class="chip" id="C#"><img src="assets/icons/csharp.svg" alt="C# icon" class="chip-icon">C#
+                <div class="chip" id="C#" onclick="chipContent(this)"><img src="assets/icons/csharp.svg" alt="C# icon" class="chip-icon">C#
                 </div>
                 <div class="chip" id="C++"><img src="assets/icons/cpp.svg" alt="C++ icon" class="chip-icon">C++
                 </div>
@@ -363,11 +363,11 @@
 
       </main>
     </div>
-
-    <footer>© John — My Portfolio</footer>
+    
+    <footer data-aos="fade-up" data-aos-anchor="#contacts">© John — My Portfolio</footer>
 
     <script src="/node_modules/typed.js/dist/typed.module.js"></script>
-    <script src="/node_modules/aos/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init();
     </script>
