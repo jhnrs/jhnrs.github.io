@@ -137,8 +137,8 @@ body::after {
   text-align: center;
   gap: 12px;
   padding: 5px;
-  width: 90%; /* Tip: use Calc function for easier calculations depending on screen size */
-  max-width: 80%;
+  width: 100%; /* Tip: use Calc function for easier calculations depending on screen size */
+  max-width: 40%;
 
   opacity: 0;
   animation: fadeIntoView 1s ease forwards;
@@ -497,6 +497,9 @@ footer {
 
 /* Responsive */
 @media (max-width: 375px) {
+  .nav {
+    max-width: 80%;
+  }
   .container {
     max-width: 100%;
     /* padding: 60px 10px 28px; */
@@ -538,7 +541,9 @@ footer {
 /* This enclosed part is for mobile devices. */
 
 @media (max-width: 320px) {
-
+  .nav {
+    max-width: 80%;
+  }
   .container {
     gap: 4px;
     max-width: 100%;
@@ -578,14 +583,10 @@ footer {
     align-items: center;
     justify-content: center;
   }
-  /* 
+  
   .nav {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    padding: auto;
-    gap: 11px;
-  } */
+    max-width: 80%;
+  }
 
 /* 
 .content-box  {
