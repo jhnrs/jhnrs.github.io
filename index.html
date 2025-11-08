@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#0f172a">
   <title>(WIP) Jhnrs — Portfolio</title>
+  <link rel="stylesheet" href="node_modules/aos/dist/aos.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -13,12 +14,12 @@
 
 <body>
 
-  <nav class="nav">
-    <a href="#about">About</a>
-    <a href="certifications.html">Certifications</a>
-    <a href="#projects">Projects</a>
-    <a href="#contacts">Contacts</a>
-    <a href="rss.html">RSS (WIP)</a>
+  <nav class="nav" data-aos="zoom-in">
+      <a href="#about">About</a>
+      <a href="certifications.html">Certifications</a>
+      <a href="#projects">Projects</a>
+      <a href="#contacts">Contacts</a>
+      <a href="rss.html">RSS (WIP)</a>
   </nav>
 
   <!-- <aside>
@@ -45,7 +46,7 @@
 
   <div class="container">
     <header class="header">
-      <div class="profile-section" data-aos="fade-up">
+      <div class="profile-section" data-aos="fade-up" data-aos-delay="450">
         <img src="assets/profile/profile-photo.webp" alt="me" class="photo">
         <div>
           <h3 style="text-align: left;">
@@ -69,7 +70,7 @@
 
     <div class="grid">
       <main>
-        <section class="quote" data-aos="fade-up">
+        <section id="quote" data-aos="fade-up" data-aos-delay="600">
           <p>
             "Our greatest weakness lies in giving up.
             The most certain way to succeed is
@@ -106,16 +107,16 @@
             <div class="currently-learning-container">
               <p class="p-emphasis">Programming Languages</p>
               <div class="chip-container">
-                <div class="chip" id="Dart" onclick="chipContent(this)"><img src="assets/icons/dart.svg" alt="Dart icon" class="chip-icon">Dart
+                <div class="chip" id="Dart" onclick="chipContent(this)" data-aos="zoom-in"><img src="assets/icons/dart.svg" alt="Dart icon" class="chip-icon">Dart
                 </div>
-                <div class="chip" id="C#" onclick="chipContent(this)"><img src="assets/icons/csharp.svg" alt="C# icon" class="chip-icon">C#
+                <div class="chip" id="C#" onclick="chipContent(this)" data-aos="zoom-in"><img src="assets/icons/csharp.svg" alt="C# icon" class="chip-icon">C#
                 </div>
-                <div class="chip" id="C++"><img src="assets/icons/cpp.svg" alt="C++ icon" class="chip-icon">C++
+                <div class="chip" id="C++" data-aos="zoom-in"><img src="assets/icons/cpp.svg" alt="C++ icon" class="chip-icon">C++
                 </div>
-                <div class="chip" id="Java"><img src="assets/icons/java.svg" alt="Java icon" class="chip-icon">Java
+                <div class="chip" id="Java" data-aos="zoom-in"><img src="assets/icons/java.svg" alt="Java icon" class="chip-icon">Java
                 </div>
                 <!-- <div class="chip" id=""><img src="assets/icons/kotlin.svg" alt="Kotlin icon" class="chip-icon">Kotlin</div> -->
-                <div class="chip" id="JavaScript"><img src="assets/icons/javascript.svg" alt="JavaScript icon"
+                <div class="chip" id="JavaScript" data-aos="zoom-in"><img src="assets/icons/javascript.svg" alt="JavaScript icon"
                     class="chip-icon">JavaScript
                 </div>
                 <!-- <div class="chip" id=""><img src="assets/icons/python.svg" alt="Python icon" class="chip-icon">Python</div> -->
@@ -123,24 +124,24 @@
 
               <p class="p-emphasis">Frameworks</p>
               <div class="chip-container">
-                <div class="chip" id="Flutter"><img src="assets/icons/flutter.svg" alt="Flutter icon"
+                <div class="chip" id="Flutter" data-aos="zoom-in"><img src="assets/icons/flutter.svg" alt="Flutter icon"
                     class="chip-icon">Flutter</div>
                 <!-- <div class="chip" id=""><img src="assets/icons/dotnet-maui.svg" alt=".NET MAUI icon" class="chip-icon">.NET MAUI
                                   </div> -->
-                <div class="chip" id="React"><img src="assets/icons/react.svg" alt="React icon" class="chip-icon">React
+                <div class="chip" id="React" data-aos="zoom-in"><img src="assets/icons/react.svg" alt="React icon" class="chip-icon">React
                 </div>
-                <div class="chip" id="React Native"><img src="assets/icons/reactnative.svg" alt="React Native icon"
+                <div class="chip" id="React Native" data-aos="zoom-in"><img src="assets/icons/reactnative.svg" alt="React Native icon"
                     class="chip-icon">React
                   Native</div>
-                <div class="chip" id="Expo"><img src="assets/icons/expo.svg" alt="Expo icon" class="chip-icon">Expo
+                <div class="chip" id="Expo" data-aos="zoom-in"><img src="assets/icons/expo.svg" alt="Expo icon" class="chip-icon">Expo
                 </div>
               </div>
 
               <p class="p-emphasis">Web Technologies</p>
               <div class="chip-container">
-                <div class="chip" id="HTML"><img src="assets/icons/html.svg" alt="HTML icon" class="chip-icon">HTML
+                <div class="chip" id="HTML" data-aos="zoom-in"><img src="assets/icons/html.svg" alt="HTML icon" class="chip-icon">HTML
                 </div>
-                <div class="chip" id="CSS"><img src="assets/icons/css.svg" alt="CSS icon" class="chip-icon">CSS
+                <div class="chip" id="CSS" data-aos="zoom-in"><img src="assets/icons/css.svg" alt="CSS icon" class="chip-icon">CSS
                 </div>
               </div>
             </div>
@@ -148,12 +149,12 @@
             <div class="right">
               <div class="chip-selected">
                 <div class="chip-info">
-                  <div class="content-box">
+                  <div class="card" data-aos="zoom-in">
                     <h2><img src="assets/icons/dart.svg" alt="Dart icon" class="chip-icon"> Dart</h2>
                     <p>A client-optimized language by Google for fast apps on any platform, powering Flutter</p>
                     <div style="text-align: center;">
-                      <span>🔗</span><a href="https://flutter.dev" target="_blank"
-                        rel="noopener noreferrer">flutter.dev</a>
+                      <span>🔗</span><a href="https://dart.dev" target="_blank"
+                        rel="noopener noreferrer">dart.dev</a>
                     </div>
                   </div>
                 </div>
@@ -166,11 +167,11 @@
         <section class="content-box" data-aos="fade-up">
           <h2>Interests</h2>
           <div class="interest-container">
-            <li>Cross-platform app development</li>
-            <li>OS development</li>
-            <li>Low-level programming</li>
-            <li>UI/UX Design</li>
-            <li>Web Design</li>
+            <li data-aos="zoom-in">Cross-platform app development</li>
+            <li data-aos="zoom-in">OS development</li>
+            <li data-aos="zoom-in">Low-level programming</li>
+            <li data-aos="zoom-in">UI/UX Design</li>
+            <li data-aos="zoom-in">Web Design</li>
 
           </div>
         </section>
@@ -178,7 +179,7 @@
         <section id="projects" class="content-box" data-aos="fade-up">
           <h2>Projects (Work in Progress)</h2>
 
-          <div class="item">
+          <div class="item" data-aos="zoom-in">
             <h3>📝Markly (A notes app)</h3>
             <p>A note-taking app with the concept tailored for developers.</p>
             <!-- <p>Features:</p>
@@ -192,7 +193,7 @@
         </ul> -->
           </div>
 
-          <div class="item">
+          <div class="item" data-aos="zoom-in">
             <h3>📃Zealify</h3>
             <p>A developer-friendly app that puts programming documentation right in your pocket. Inspired by the
               popular Zeal app, it lets you quickly access docsets anytime, anywhere—making coding references fast,
@@ -201,7 +202,7 @@
               always within reach.</p>
           </div>
 
-          <div class="item">
+          <div class="item" data-aos="zoom-in">
             <h3>🎧Musicly</h3>
             <p>Musicly is a music app designed with Material 3, giving it a clean and modern look. It lets you enjoy and
               organize your favorite tracks with a simple, easy-to-use interface.</p>
@@ -219,7 +220,7 @@
 
         <section class="content-box" data-aos="fade-up">
           <h2>Education</h2>
-          <div>
+          <div data-aos="zoom-in">
             <h4>Course/s:</h4>
             <ul>
               <li><span style="color: var(--muted)">
@@ -240,7 +241,7 @@
           <h2>Skills</h2>
           <div class="skills-container">
             <ul>
-              <div class="item">
+              <div class="item" data-aos="zoom-in">
                 <li>
                   <details open>
                     <summary>Technical Support</summary>
@@ -252,7 +253,7 @@
                 </li>
               </div>
 
-              <div class="item">
+              <div class="item" data-aos="zoom-in">
                 <li>
                   <details open>
                     <summary>Computer Maintenance</summary>
@@ -264,7 +265,7 @@
                 </li>
               </div>
 
-              <!-- <div class="item">
+              <!-- <div class="item" data-aos="zoom-in">
             <li>
               <details open>
                 <summary>Project Management</summary>
@@ -275,7 +276,7 @@
             </li>
           </div> -->
 
-              <div class="item">
+              <div class="item" data-aos="zoom-in">
                 <li>
                   <details open>
                     <summary>Research Skills</summary>
@@ -286,7 +287,7 @@
                 </li>
               </div>
 
-              <div class="item">
+              <div class="item" data-aos="zoom-in">
                 <li>
                   <details open>
                     <summary>Analytical Skills</summary>
@@ -297,7 +298,7 @@
                 </li>
               </div>
 
-              <div class="item">
+              <div class="item" data-aos="zoom-in">
                 <li>
                   <details open>
                     <summary>Software Troubleshooting</summary>
@@ -317,7 +318,7 @@
           <div class="contact-container">
 
             <li>
-              <div class="contact-info-container">
+              <div class="contact-info-container" data-aos="zoom-in">
                 <a href="mailto:johnrosales933@gmail.com">
                   <img src="assets/icons/gmail.svg" alt="Gmail icon" class="contact-icon">
                 </a>
@@ -331,7 +332,7 @@
             </li>
 
             <li>
-              <div class="contact-info-container">
+              <div class="contact-info-container" data-aos="zoom-in">
                 <a href="https://github.com/jhnrs" target="_blank" rel="noopener noreferrer">
                   <img src="assets/icons/github.svg" alt="GitHub icon" class="contact-icon">
                 </a>
@@ -345,7 +346,7 @@
             </li>
 
             <li>
-              <div class="contact-info-container">
+              <div class="contact-info-container" data-aos="zoom-in">
                 <a href="https://www.linkedin.com/in/justjohn07" target="_blank" rel="noopener noreferrer">
                   <img src="assets/icons/linkedin.svg" alt="LinkedIn icon" class="contact-icon">
                 </a>
@@ -368,10 +369,14 @@
 
     <script src="/node_modules/typed.js/dist/typed.module.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="node_modules/aos/dist/aos.js"></script>
     <script>
       AOS.init({ disable: false });
     </script>
     <script src="index-content.js"></script>
+    <script>
+      chipContent();
+    </script>
 </body>
 
 </html>

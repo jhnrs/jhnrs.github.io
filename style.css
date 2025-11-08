@@ -1,5 +1,5 @@
 /* All comments made to this file are for "remembrance" purposes or others */
-/* Use with Chrome DevTools*/
+/* Note: Best with the help of Chrome DevTools*/
 
 /* for easy distinction of
 different elements/components
@@ -19,7 +19,6 @@ for div tag */
 }
 
 * {
-  /* font-size: 1em; */
   box-sizing: border-box;
   text-wrap: wrap;
 }
@@ -119,7 +118,8 @@ body::after {
 .nav {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  overflow-x: auto;
+  white-space: nowrap;
   position: fixed;
   margin: 0px auto;
   top: 15px;
@@ -132,10 +132,11 @@ body::after {
   background: rgba(49, 46, 129, 0.5);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* for nav's shadows */
   backdrop-filter: blur(10px);
+  align-items: center;
   justify-content: space-evenly;
   text-align: center;
-  gap: 14px;
-  padding: 20px;
+  gap: 12px;
+  padding: 0px;
   width: 90%; /* Tip: use Calc function for easier calculations depending on screen size */
   max-width: fit-content;
 
@@ -143,6 +144,7 @@ body::after {
   animation: fadeIntoView 1s ease forwards;
 }
 .nav a {
+  padding: 10px;
   color: var(--muted);
   text-decoration: none;
   text-align: center;
@@ -179,11 +181,10 @@ body::after {
   justify-content: center;
   text-align: center;
 }
-.quote {
+#quote {
   font-style: italic;
   justify-content: center;
   text-align: center;
-  font-size: 0.80em;
   font-weight: bold;
   padding: 3%;
   max-width: 75%;
@@ -235,12 +236,20 @@ h3, h4 {
 }
 
 /*----------------------------------------------------*/
-.content-box {
-  max-width: 70%;
+/* .card for only just for the card layout */
+.card {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 24px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  padding: 30px;
+  padding: 25px;
+}
+
+.content-box {
+/*   background: rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); */
+  max-width: 70%;
+  padding: 25px;
   margin: 8px auto;
 }
 
@@ -282,12 +291,12 @@ h3, h4 {
   font-weight: bold;
 }
 .chip-container {
-  margin: 0px 0px;
+  margin-bottom: 15px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 8px;
-  padding: 0px 15px 25px 15px; /* padding: top right bottom left */
+  padding: 0; /* padding: top right bottom left */
   justify-content: center;
 }
 .chip {
@@ -352,7 +361,8 @@ h3, h4 {
   box-shadow: 0 0 20px rgba(17, 185, 183, 0.719);
   transform: scale(1.01);
 }
-.content-box .item:not(:hover) { /* opposite of :hover is just use :not(:hover) */
+/* opposite of :hover is just use :not(:hover) */
+.content-box .item:not(:hover) { 
   transition: ease 0.2s, box-shadow 0.2s, transform 0.3s;
 }
 
@@ -408,7 +418,7 @@ details[open] .details-content:hover {
 .contact-container {
   display: grid;
   grid-template-columns: 33% 33% 33%;
-
+  
 
 
 /*   display: flex;
@@ -417,7 +427,7 @@ details[open] .details-content:hover {
 
 .contact-container li {
   margin: 0px auto 0px;
-  padding: 10px;
+  padding: 5px;
   width: 278px;
   list-style-type: none;
   justify-content: center;
@@ -603,7 +613,7 @@ footer {
     align-content: center;
     text-align: center;
     gap: 10px;
-    padding: 0 10px;
+    padding: 0 25px;
     margin: 0 auto;
     height: 230px;
   }
