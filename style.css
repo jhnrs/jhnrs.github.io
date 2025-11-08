@@ -136,15 +136,15 @@ body::after {
   justify-content: space-evenly;
   text-align: center;
   gap: 12px;
-  padding: 0px;
+  padding: 5px;
   width: 90%; /* Tip: use Calc function for easier calculations depending on screen size */
-  max-width: fit-content;
+  max-width: 80%;
 
   opacity: 0;
   animation: fadeIntoView 1s ease forwards;
 }
 .nav a {
-  padding: 10px;
+  padding: 12px;
   color: var(--muted);
   text-decoration: none;
   text-align: center;
