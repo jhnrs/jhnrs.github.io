@@ -540,8 +540,9 @@ footer {
   }
 
   .contact-info-container {
-    max-width: fit-content;
-    gap: 0px;
+    margin: 0px auto;
+    width: 260px;
+    gap: 5px;
   }
 
   .contact-info-text {
