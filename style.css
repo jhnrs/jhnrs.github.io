@@ -527,7 +527,6 @@ footer {
     display: flex;
     flex-direction: row;
     max-width: fit-content;
-    display: flex;
     
   }
   .contact-container {
