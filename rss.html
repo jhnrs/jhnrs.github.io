@@ -4,23 +4,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0f172a">
     <title>Jhnrs - RSS (Test, For Tech News)</title>
+    <link rel="stylesheet" href="node_modules/aos/dist/aos.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
+
 <body>
-    <nav class="nav">
+    <nav class="nav" data-aos="zoom-in">
         <a href="index.html">Profile</a>
         <a href="certifications.html">Certifications</a>
     </nav>
 
     <div class="container">
-        <div class="content-box" data-aos="fade-up">
+        <div class="content-box" data-aos="zoom-in">
+            <h1>Some Tech News...</h1>
             <div class="rss-feed-container">
                 <p>Nothing yet...</p>
             </div>
         </div>
     </div>
+
+    <div class="WIP" data-aos="fade-up" data-aos-delay="500">
+      (WIP)
+    </div>
+
     <script src="rss-content.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="node_modules/aos/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true })
+    </script>
     <!-- <script src="https://storage.googleapis.com/feednami-static/js/feednami-client-v1.0.1.js">
         var url = 'http://daringfireball.net/feeds/articles'
         feednami.load(url, function (result) {

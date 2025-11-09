@@ -20,14 +20,7 @@
 
 
 
-        <div style="text-align: center;
-                opacity: 35%;
-                font-size: larger;
-                position: absolute;
-                left: 46%;
-                top: 50%;">(WIP)
-        </div>
-
+        
         <div class="container">
             <section class="content-box" data-aos="fade-up">
                 <h2>Certifications</h2>
@@ -35,7 +28,11 @@
                     <p>Nothing yet...</p>
                 </div>
             </section>
-
+    
+            <div class="WIP" data-aos="fade-up" data-aos-delay="500">
+                (WIP)
+            </div>
+            
             <section class="content-box" data-aos="fade-up">
                 <h2>Seminars</h2>
                 <div class="seminars-container">
@@ -48,11 +45,12 @@
         </div>
     </main>
 
-    <footer>© John — My Portfolio</footer>
+    <footer data-aos="fade-up" data-aos-delay="700">© John — My Portfolio</footer>
     <script src="node_modules/aos/dist/aos.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="node_modules/aos/dist/aos.js"></script>
     <script>
-        AOS.init();
+        AOS.init({ once: true });
     </script>
     <script src="certifications-content.js" defer></script>
 </body>
