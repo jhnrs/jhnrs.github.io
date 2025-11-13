@@ -23,6 +23,14 @@ for div tag */
   text-wrap: wrap;
 }
 
+/* font stylings */
+/* @font-face {
+  font-family: 'MyCustomFont',;
+  src: url();
+} */
+/* h1, h2, h3, h4 {
+  font-family: mont;
+} */
 
 html, body {
   width: 100%;
@@ -260,7 +268,7 @@ h3, h4 {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); */
   max-width: 70%;
   padding: 25px;
-  margin: 8px auto;
+  margin: 4px auto;
 }
 
 .content-box li {
@@ -286,6 +294,7 @@ h3, h4 {
 }
 
 .currently-learning-container {
+  padding: 1px;
   text-align: center;
 }
 .chip-info {
@@ -436,6 +445,7 @@ details[open] .details-content:hover {
 }
 
 .contact-container li {
+  overflow: hidden;
   margin: 0px auto 0px;
   padding: 5px;
   width: 278px;
@@ -573,22 +583,18 @@ footer {
   }
 
   .contact-container li {
-    max-width: max-content;
+    max-width: fit-content;
     display: flex;
     flex-direction: row;
     padding: 5px;
   }
   .contact-container {
     margin: 0px auto;
-    display: flex;
-    flex-direction: row;
   }
 
   .contact-info-container {
     max-width: fit-content;
     gap: 0px;
-    display: flex;
-    flex-direction: row;
   }
 
   .contact-info-text {
@@ -596,6 +602,25 @@ footer {
   }
 }
 
+@media (max-width: 800px) {
+  .container {
+    max-width: 100%;
+    margin: auto;
+  }
+  .contact-container li {
+    max-width: fit-content;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+  }
+  .contact-info-container {
+    max-width: fit-content;
+    gap: 0px;
+  }
+  .contact-info-text {
+    content-visibility: hidden;
+  }
+}
 
 @media (max-width: 768px) {
   .header {
