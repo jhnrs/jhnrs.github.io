@@ -1,1 +1,0 @@
-Just a repo containing necessary files to run the website
