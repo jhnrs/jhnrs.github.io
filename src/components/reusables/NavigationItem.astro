@@ -1,0 +1,44 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+    title: string;
+    showTitle?: boolean;
+    link: string;
+    icon?: string;
+}
+
+const { title, link, icon, showTitle = true } = Astro.props as Props;
+---
+
+<a href={link}>
+    {icon && <Icon name={`material-symbols:${icon}`} width={20} height={20} />}
+    {showTitle && <div class="navName">{title}</div>}
+</a>
+
+<style>
+    a {
+        display: inline-flex; /* Self note: to make icons and title navigations aligned */
+        align-items: center;
+        gap: 0.5rem;
+        flex-shrink: 0;
+        padding: 12px;
+        color: var(--muted);
+        text-decoration: none;
+        text-align: center;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+    a:hover {
+        color: var(--accent);
+    }
+    .navName {
+            display: none;
+        }
+    @media (min-width: 768px) {
+        
+        .navName {
+            display: inline-flex;
+        }
+    }
+</style>

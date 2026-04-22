@@ -1,0 +1,61 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/reusables/Navigation.astro";
+import NavigationItem from "../components/reusables/NavigationItem.astro";
+import Project from "../components/reusables/Project.astro";
+import Text from "../components/reusables/Text.astro";
+import Card from "../components/reusables/Card.astro";
+---
+
+<Layout>
+    <Navigation>
+        <NavigationItem title="Home" icon="home-rounded" link="/" />
+    </Navigation>
+
+    <Card>
+        <h2>Personal Projects</h2>
+
+        <Project
+            id="markly"
+            title="Markly"
+            description="A notes app that uses Markdown syntax tailored for developers."
+            features={[
+                "Add tasks and reminders directly inside your notes",
+                "Organize notes to match your projects or workflow",
+                "Lightweight, intuitive, and designed for productivity",
+                "On-device AI integration for searching.",
+                "(Still a concept): IDE integration (e.g., VS Code, Android Studio, IntelliJ, etc.) for seamless access to Markly notes and reminders.",
+            ]}
+        />
+
+        <Project
+            id="musicly"
+            title="Musicly"
+            description="A music app designed with Material 3, giving it a clean and modern look. It lets you enjoy and
+                            organize your favorite tracks with a simple, easy-to-use interface."
+            features={[
+                "Support for editing Music Tags",
+                "Support for Synced Lyrics",
+                '"Mood Tags" — group your songs according to what they make you feel.',
+                "Backup support",
+            ]}
+        />
+
+        <Project
+            id="zealify"
+            title="Zealify"
+            description="Zealify brings the power of developer documentation browsing—originally inspired by the popular desktop app Zeal—to
+                            mobile and cross-platform environments. With Zealify, developers an access, search, and reference documentation
+                            anytime, anywhere, without needing an internet connection.
+                            It’s also a great resource for students who want to learn programming directly from
+                            official
+                            documentation, without relying on AI tools but using AI as a guide/companion. "
+            features={[
+                'On-device AI integration for ease of use enhancing in searches, summaries, etc.',
+                'Support for different programming languages and frameworks.',
+                'Download resources for offline use.',
+                /* 'Dark theme tuned for preventing eye-strain. (specifically tuned for OLED devices.)' */
+            ]}
+        />
+    </Card>
+</Layout>

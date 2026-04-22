@@ -1,0 +1,58 @@
+---
+// Layout
+import Layout from '../layouts/Layout.astro';
+
+// Components
+import Card from '../components/reusables/Card.astro';
+import NoCard from '../components/reusables/NoCard.astro';
+
+// Contents
+import AboutMe from '../components/content/AboutMe.astro';
+import Contacts from '../components/content/Contacts.astro';
+import Hero from '../components/content/Hero.astro';
+import Skills from '../components/content/Skills.astro';
+import TechStack from '../components/content/TechStack.astro';
+import Education from '../components/reusables/Education.astro';
+import MyProjects from '../components/content/MyProjects.astro';
+
+// Components
+import Navigation from '../components/reusables/Navigation.astro';
+import NavigationItem from '../components/reusables/NavigationItem.astro';
+import SplitLayout from '../layouts/SplitLayout.astro';
+---
+
+<Layout>
+
+	<Navigation>
+		<NavigationItem link='/' title='Home' icon="home-rounded" />
+		<NavigationItem link='/about' title='About' icon="account-circle" />
+		<NavigationItem link='#projects' title='Projects' icon='code'/>
+		<NavigationItem link='/certifications' title='Certifications' icon='workspace-premium' />
+		<NavigationItem link='#contacts' title='Contacts' icon="mail" />
+		<NavigationItem link='/blog' title="Blog" icon="edit-document-rounded" />
+		<!-- <NavigationItems link='/rss' title='RSS' /> -->
+	</Navigation>
+
+		<Hero />
+
+	<Card>
+		<TechStack />
+	</Card>
+
+	<Card>
+		<Skills />
+	</Card>
+
+	<Card>
+		<Education />
+	</Card>
+
+	<Card>
+		<MyProjects />
+	</Card>
+
+	<Card>
+		<Contacts />
+	</Card>
+
+</Layout>

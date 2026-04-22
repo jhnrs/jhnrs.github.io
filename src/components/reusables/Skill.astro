@@ -1,0 +1,29 @@
+---
+interface Props {
+    skill: string;
+    description: string;
+}
+
+const skills = Astro.props;
+---
+
+        <div class="item">
+                <details open>
+                    <summary>{skills.skill}</summary>
+                    <div class="details-content">{skills.description}</div>
+                </details>
+        </div>
+
+<style>
+    summary {
+        list-style-type: none;
+        font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+        .skills-container ul {
+            display: grid;
+            grid-template-columns: 100%;
+        }
+    }
+</style>

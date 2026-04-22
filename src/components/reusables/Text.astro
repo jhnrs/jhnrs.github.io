@@ -1,0 +1,14 @@
+---
+interface Props {
+    tag?: 'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'pre' | 'code'
+    data: string;
+}
+const text = Astro.props;
+// We assign the tag to a capitalized constant so it can be used as a tag
+// uses Tag default value "p" if there's no passes Text.tag prop
+const Tag = text.tag || 'p';
+---
+
+<div>
+    <Tag>{text.data}</Tag>
+</div>

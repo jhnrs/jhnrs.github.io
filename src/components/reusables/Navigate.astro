@@ -1,0 +1,34 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+    to: string;
+    icon?: string;
+    text?: string;
+    opensNewTab?: boolean;
+}
+
+const { to, text, icon, opensNewTab = false } = Astro.props;
+const linkText = text || "Provide Title Text";
+const isWrapper = Astro.slots.has("default");
+const determineClass = isWrapper ? 'tappable-box' : 'as-link'
+const externalAttributes = opensNewTab ? { target: "_blank", rel: "noopener noreferrer" } : {};
+---
+<a href={to} class={determineClass} {...externalAttributes}>
+                {isWrapper  ? <slot />
+                            : <div>{icon ? <div class="as-link">{linkText}<Icon name={`material-symbols:${icon}`} width={21} height={21} /></div>
+                                         : linkText }</div> }
+            </a>
+<style>
+    .tappable-box {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        cursor: pointer;
+    }
+    .as-link {
+        text-decoration: inherit;
+        display: inline-flex;
+        flex-direction: row;
+    }
+</style>

@@ -1,0 +1,21 @@
+---
+interface Props extends astroHTML.JSX.HTMLAttributes {
+    src: string;
+    alt?: string;
+}
+
+const { src, alt, class: className, ...attrs } = Astro.props;
+---
+
+<img
+    src={src}
+    alt={alt}
+    class:list={["photo", className]}
+    {...attrs}
+/>
+
+<style>
+    img .photo {
+        margin: 20px;
+    }
+</style>

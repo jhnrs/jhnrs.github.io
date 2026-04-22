@@ -1,0 +1,100 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/reusables/Navigation.astro";
+import NavigationItem from "../components/reusables/NavigationItem.astro";
+import Certificate from "../components/reusables/Certificate.astro";
+import { CertType } from "../components/reusables/Certificate.astro";
+import Card from "../components/reusables/Card.astro";
+---
+
+<Layout>
+    <Navigation>
+        <NavigationItem link="/" title="Home" icon="home-rounded" />
+    </Navigation>
+
+    <Card>
+        <h2>Certifications</h2>
+        <details open id="certificate-content">
+            <summary>Courses</summary>
+            <div class="content">
+                <Card>
+                    <Certificate
+                        title="Google AI Essentials"
+                        organization="Google"
+                        platform="Coursera"
+                        img="assets/certificates/Coursera 2KTNAVVUQUA5.webp"
+                        certificationLink="https://coursera.org/share/2f854c3e23f5a777f6c86e1c89aefb7e"
+                        date="February 24, 2026"
+                    />
+                </Card>
+                <Card>
+                    <Certificate
+                        title="Technical Support Fundamentals"
+                        organization="Google"
+                        platform="Coursera"
+                        img="assets/certificates/Coursera 3KTR6PPZ7PIO.webp"
+                        certificationLink="https://coursera.org/share/ae3f40caf7de7a34f276306f591cbe9a"
+                        date="February 17, 2026"
+                    />
+                </Card>
+                <Card>
+                    <Certificate
+                        title="The Bits and Bytes of Computer Networking"
+                        organization="Google"
+                        platform="Coursera"
+                        img="/assets/certificates/Coursera Z9OPMZCWBNIU.webp"
+                        certificationLink="https://coursera.org/share/adc44be2e0cb34f63a35fd663c4a658d"
+                        date="March 25, 2026"
+                    />
+                </Card>
+            </div>
+        </details>
+    </Card>
+</Layout>
+<style>
+    summary {
+        font-weight: bold;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        padding: 10px 15px; /* padding: top right bottom left */
+        margin: 2px 0;
+        width: fit-content;
+        cursor: pointer 
+    }
+
+    /* Internal div must have overflow hidden */
+    .content {
+        overflow: hidden;
+    }
+</style>
+
+<script>
+    const details = document.querySelector('#certificate-content') as HTMLDetailsElement;
+    const summary = details.querySelector('summary') as HTMLElement;
+    const content = details.querySelector('.content') as HTMLElement;
+
+    summary.addEventListener('click', (e) => {
+    e.preventDefault(); // Stop the instant "snap"
+    if (details.open) {
+
+      // Logic for closing
+      const animation = content.animate([
+        { height: `${content?.offsetHeight}px`, opacity: 1 },
+        { height: '0px', opacity: 0 }
+      ], { duration: 300, easing: 'ease-out' });
+      
+      animation.onfinish = () => details.open = false;
+
+    } else {
+
+      details.open = true;
+      // Logic for opening
+      content.animate([
+        { height: '0px', opacity: 0 },
+        { height: `${content.scrollHeight}px`, opacity: 1 }
+      ], { duration: 300, easing: 'ease-out' });
+    
+    }
+  });
+</script>

@@ -1,0 +1,40 @@
+---
+interface MyEducation {
+    current?: boolean;
+    course: string;
+    institution: string;
+    date: string;
+}
+
+const myEducation: MyEducation[] = [
+    {
+        current: true,
+        course: 'Bachelor of Science in Computer Engineering',
+        institution: 'Naga College Foundation Inc.',
+        date: '2023 - Present'
+    },
+]
+---
+
+<section id="education">
+    <h2>Education</h2>
+    <div data-aos="zoom-in">
+        <h4>Course/s:</h4>
+        <ul>
+            {myEducation.map((education) => (
+                <li>
+                    {education.current && <span style="color: var(--muted)">(Currently)</span>}
+                    <div>{education.course}</div>
+                    <div style="color: var(--muted)">{education.institution}</div>
+                    <div style="color: var(--muted)">{education.date}</div>
+                </li>
+            ))}
+        </ul>
+    </div>
+</section>
+
+<style>
+    #education li {
+        list-style-type: none;
+    }
+</style>

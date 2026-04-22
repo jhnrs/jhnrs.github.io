@@ -1,0 +1,25 @@
+{
+  "name": "jhnrs-astro-portfolio",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.8",
+    "@fontsource/jetbrains-mono": "^5.2.8",
+    "aos": "^2.3.4",
+    "astro": "^5.17.1",
+    "astro-icon": "^1.1.5",
+    "motion": "^12.35.0",
+    "typeit": "^8.8.7",
+    "typescript": "^6.0.3"
+  },
+  "devDependencies": {
+    "@iconify-json/material-symbols": "^1.2.65",
+    "@iconify-json/mdi": "^1.2.3"
+  }
+}

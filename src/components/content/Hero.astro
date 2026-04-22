@@ -1,0 +1,109 @@
+---
+import { Image } from "astro:assets"
+import Photo from "../reusables/Photo.astro"
+import professionalImage from 'assets/profile/professional_profile.jpeg'
+import MiniContactIcon from "../reusables/MiniContactIcon.astro"
+import MiniContacts from "./MiniContacts.astro"
+---
+
+<script>
+    import TypeIt from "typeit";
+
+    function startTyping() {
+        /* Note to self, when modifying text content also modify the params of delete method */
+        new TypeIt("#typing", { speed: 50, loop: true, deleteSpeed: 10, })
+            .type("Hi! I'm John", /* { instant: true } */)
+            .pause(800)
+            .delete(13)
+    
+            .type("A Computer Engineering Student")
+            .pause(800)
+            .delete(31)
+    
+            .type("An Indie Software Developer")
+            .pause(800)
+            .delete(27)
+    
+            .type("Building performant, type-safe applications")
+            .pause(800)
+            .delete(43)
+            
+            .type("Logic-driven developer with a creative edge.")
+            .pause(800)
+            .delete(44)
+            .go();
+    }
+
+    document.addEventListener('astro:page-load', startTyping);
+
+</script>
+
+<header class="hero">
+    <div class="profile-section">
+        <!-- <Photo src="assets/profile/profile-photo.webp" alt="me" class="photo" /> -->
+        <Photo src="assets/profile/professional_profile.webp" alt="me" class="photo" />
+        <!-- <img src="assets/profile/profile-photo.webp" alt="me" class="photo" /> -->
+        <div class="text-content">
+
+            <h3 class="typing-container">
+                <span id="typing"></span>
+            </h3>
+            
+            <div class="subtitle">
+                <span>Passionate about creating software applications tailored to users’ needs</span>
+            </div>
+            <MiniContacts />
+        </div>
+    </div>
+</header>
+
+<style>
+    .hero {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+
+    .text-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-section {
+        display: flex;
+        flex-direction: column; /* Default: Stacked for Mobile */
+        align-items: center;
+        text-align: center; /* Center text for mobile "vibe" */
+        gap: 20px;
+        width: 90%;
+        max-width: 800px;
+    }
+
+    .photo {
+        width: 150px; /* Smaller for mobile */
+        height: 150px;
+        border-radius: 20px;
+        object-fit: cover;
+        /* background: linear-gradient(135deg, var(--accent), #7c3aed); */
+    }
+
+    /* Desktop Overrides (Logic: If screen is wider than 768px) */
+    @media (min-width: 768px) {
+        .profile-section {
+            flex-direction: row; /* Switch to Row for Desktop */
+            text-align: center; /* Align text to left when side-by-side */
+            gap: 32px;
+        }
+
+        .photo {
+            width: 200px; /* Larger for Desktop */
+            height: 200px;
+        }
+
+        .typing-container,
+        .subtitle {
+            text-align: center; /* Ensure individual tags follow the row logic */
+        }
+    }
+</style>

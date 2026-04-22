@@ -1,0 +1,53 @@
+---
+import Skill from "../reusables/Skill.astro";
+---
+<section class="content-box" data-aos="fade-up">
+    <h2>Skills</h2>
+    <div class="skills-container">
+        <ul>
+            <Skill
+                skill="Technical Support"
+                description="Able to assist users for hardware and software
+                                    issues."
+            />
+
+            <Skill
+                skill="Computer Maintenance"
+                description="Able to diagnose, repair, and optimize system
+                            performance."
+            />
+
+            <Skill
+                skill="Analytical Skills"
+                description="Apply logical thinking to problem-solving and system
+                            analysis."
+            />
+
+            <Skill
+                skill="Software Troubleshooting"
+                description="Able to identify and resolve software-related issues."
+            />
+        </ul>
+    </div>
+</section>
+
+<style>
+    .skills-container ul {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    .skills-container summary {
+        list-style-type: none;
+        font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+        .skills-container ul {
+            display: grid;
+            grid-template-columns: 100%;
+        }
+    }
+</style>

@@ -1,0 +1,145 @@
+---
+import Footer from "../components/content/Footer.astro";
+---
+
+<div class="layout-grid">
+    <aside class="sticky-profile">
+        <slot name="profile" />
+    </aside>
+
+    <main class="main-content">
+        <slot name="content" />
+    </main>
+    <Footer />
+</div>
+
+<style>
+    :root {
+        --background: rgba(#0ea5a3);
+        --my-test-new-bg: #000000;
+        --bg-gradient: linear-gradient(
+            135deg,
+            #0f172a,
+            #1e293b,
+            #1a1946,
+            #1e0720
+        );
+        --text: #e6eef6;
+        --muted: #94a3b8;
+        --accent: #0ea5a3;
+        --highlight: #1bdaf3;
+
+        --font-main: "JetBrains Mono", monospace;
+    }
+    * {
+        box-sizing: border-box;
+        text-wrap: wrap;
+    }
+    a {
+        color: var(--accent);
+    }
+    html,
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        font-family: var(--font-main) /* 'Courier New', Courier, monospace */;
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: -0.01em;
+        -webkit-font-smoothing: antialiased; /* valid css styling for macOS and iOS smooth rendering */
+    }
+    html {
+        height: 100svh;
+        height: 100dvh;
+        height: -webkit-fill-available;
+        background: var(--my-test-new-bg);
+        scroll-behavior: smooth;
+    }
+    body {
+        font-family: "Segoe UI", Tahoma;
+        background: inherit;
+        color: white;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        min-height: 100dvh;
+        min-height: -webkit-fill-available;
+        cursor: default; /* For the cursor, for Desktops, to not trigger its "Text Icon" mode */
+        user-select: none; /* This property is useful for making the page non-selectable "???" */
+    }
+    body::after {
+        content: "";
+        position: fixed;
+        top: 100vh;
+        top: 100dvh;
+        left: 0;
+        width: 100%;
+        height: 100%; /* value before 150px */
+        background: linear-gradient(135deg, #000428, #0f091b);
+        z-index: -1;
+    }
+    main {
+        margin-top: 120px; /* Use fixed px or rem for predictable top spacing */
+        flex: 1;
+    }
+    h1 {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        padding: 10px 30px; /* padding: top right bottom left */
+        margin: 0px auto 10px;
+        width: 500px;
+        justify-content: center;
+    }
+    h2 {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        padding: 10px 30px; /* padding: top right bottom left */
+        margin: 0px auto 10px;
+        /* width: fit-content; */
+        justify-content: center;
+    }
+    h3 {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        padding: 10px 15px; /* padding: top right bottom left */
+        margin: 0px;
+        width: fit-content;
+    }
+    h4 {
+        margin: 10px;
+    }
+    .subtitle {
+        color: var(--muted);
+        margin-top: 6px;
+        margin-bottom: 30px;
+    }
+
+    #about,
+    #projects {
+        scroll-margin-top: 130px;
+    }
+    .layout-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+        height: 100dvh;
+    }
+    .sticky-profile {
+        position: sticky;
+        top: 0;
+        height: 100dvh;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .main-content {
+        padding: 2rem;
+    }
+</style>

@@ -1,0 +1,113 @@
+---
+import Contact from "../reusables/Contact.astro";
+import { ContactLinkType } from "../reusables/Contact.astro";
+---
+<section id="contacts" data-aos="fade-up">
+    <h2>Contacts</h2>
+    <div class="contacts">
+        <ol>
+            <li>
+                <Contact
+                    link="johnrosales933@gmail.com"
+                    imgName="Gmail"
+                    imgsrc="assets/icons/gmail.svg"
+                    label="Email"
+                    linkType={ContactLinkType.email}
+                    opensNewTab={true}
+                />
+            </li>
+
+            <li>
+                <Contact
+                    link="github.com/jhnrs"
+                    imgName="Github"
+                    imgsrc="assets/icons/github.svg"
+                    label="Github"
+                    linkType={ContactLinkType.webpage}
+                    opensNewTab={true}
+                />
+            </li>
+
+            <li>
+                <Contact
+                        link="linkedin.com/in/justjohn07"
+                        imgName="LinkedIn"
+                        imgsrc="assets/icons/linkedin.svg"
+                        label="LinkedIn"
+                        linkType={ContactLinkType.webpage}
+                        opensNewTab={true} />
+            </li>
+        </ol>
+    </div>
+</section>
+
+<style>
+    .contacts ol {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        gap: 5px;
+        padding: 0;
+        list-style: none;
+    }
+
+    @media (min-width: 900px) {
+        .contacts ol {
+            display: flex;
+            grid-template-columns: repeat(3, 278px);
+            gap: 20px;
+        }
+    }
+    @media (min-width: 1160px) {
+        .contacts ol {
+            display: grid;
+            grid-template-columns: repeat(3, 278px);
+            justify-content: center;
+            gap: 20px;
+        }
+    }
+    .contacts li {
+        display: flex;
+        justify-content: center;
+    }
+
+    .contact-icon {
+        width: 46px;
+        height: 46px;
+        margin-right: 0px;
+        flex-shrink: 0;
+        display: inline-block;
+        object-fit: contain;
+    }
+    .contact-info-container {
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 15px;
+        overflow: hidden;
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: left;
+        max-width: 278px;
+        height: 60px;
+        width: 100%;
+        padding: 10px 15px;
+        margin: 0px 0 0 0;
+        font-size: 0.92rem;
+        font-weight: 500;
+        gap: 6px;
+        white-space: nowrap;
+        box-sizing: border-box;
+        transition:
+            box-shadow 0.2s,
+            transform 0.3s;
+    }
+    .contact-info-container .contact-info-text {
+        text-align: left;
+        display: inline-flex;
+        flex-direction: column;
+    }
+    .contact-info-container:hover {
+        box-shadow: 0 0 20px rgba(17, 185, 183, 0.719);
+        transform: scale(1.05);
+    }
+</style>

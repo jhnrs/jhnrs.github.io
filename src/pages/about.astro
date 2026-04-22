@@ -1,0 +1,175 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/content/Hero.astro";
+import AboutMe from "../components/content/AboutMe.astro";
+import Card from "../components/reusables/Card.astro";
+import Text from "../components/reusables/Text.astro";
+import NavigationItems from "../components/reusables/NavigationItem.astro";
+import Navigation from "../components/reusables/Navigation.astro";
+import Photo from "../components/reusables/Photo.astro";
+import Navigate from "../components/reusables/Navigate.astro";
+---
+
+<!-- Need refinements on content -->
+<Layout>
+        <Navigation>
+                <NavigationItems link="/" title="Home" icon="home-rounded" />
+        </Navigation>
+
+        <Photo src="assets/profile/profile-photo.webp" alt="me" class="photo" />
+
+        <Card>
+                <section id="about">
+                        <h2>About</h2>
+                        <p>
+                                I’m a motivated and continuously learning
+                                software developer with a strong interest in
+                                creating applications that are <strong
+                                        >practical</strong
+                                >,<strong> user-friendly</strong>, and<strong>
+                                        adaptable</strong
+                                > to users’ needs. My work emphasizes <strong
+                                        >usability</strong
+                                >,<strong> functionality</strong>, and
+                                <strong>reliability</strong>, and I’m committed
+                                to improving my skills through hands-on projects
+                                and industry best practices.
+                        </p>
+                        <p>I value:</p>
+                        <ul>
+                                <li>
+                                        <strong>User-focused design</strong> – building
+                                        solutions that solve real problems.
+                                </li>
+                                <li>
+                                        <strong>Quality code</strong> – writing maintainable
+                                        and efficient applications.
+                                </li>
+                                <li>
+                                        <strong>Growth mindset</strong> – consistently
+                                        learning new frameworks, tools, and approaches.
+                                </li>
+                        </ul>
+                </section>
+
+                <p>
+                        I'm a Computer Engineering student passionate about
+                        building smart and creative digital experiences. With a
+                        strong foundation in C++, C# and Java, I've developed
+                        solid problem-solving and OOP skills that help me easily
+                        adapt to modern tools. My goal is to grow as a software
+                        and mobile app developer, creating projects that connect
+                        technology, creativity, and real-world impacts. I aim to
+                        explore both software and embedded systems, bridging
+                        hardware and intelligent applications. In the long run,
+                        I hope to lead or collaborate on innovative tech
+                        solutions.
+                </p>
+
+                <h2>Interest</h2>
+                <div class="interests-container">
+                        <ul>
+                                <li>Cross-platform App Development</li>
+                                <li>Native App Development</li>
+                                <li>OS development</li>
+                                <li>Low-level programming</li>
+                                <li>UI/UX Design</li>
+                                <li>Web Development</li>
+                        </ul>
+                </div>
+
+                <h2>Goals</h2>
+                <h4>👩‍💻 Software and App Development</h4>
+                <ul>
+                        <li>
+                                Enhance my technical skills in web and app
+                                development.
+                        </li>
+                        <li>
+                                Intern or work in a tech company to apply my
+                                skills in real-world projects.
+                        </li>
+                </ul>
+
+                <h4>🔧 Full-stack or Backend Engineering</h4>
+                <ul>
+                        <li>
+                                Become a full-stack developer or software
+                                engineer.
+                        </li>
+                        <li>Earn certifications in key technologies.</li>
+                        <li>
+                                Collaborate on tech innovation projects
+                                integrating hardware and software.
+                        </li>
+                </ul>
+
+                <h4>💫 Embedded Systems / Firmware Development</h4>
+                <ul>
+                        <li>
+                                Strengthen understanding of computer systems and
+                                firmware.
+                        </li>
+                        <li>
+                                Contribute to AI or embedded systems and
+                                development.
+                        </li>
+                        <li>
+                                Create meaningful tech products that solve
+                                real-world problems.
+                        </li>
+                </ul>
+        </Card>
+</Layout>
+
+<style>
+        .photo {
+                display: flex;
+                flex-direction: row;
+                margin: 0 auto;
+                width: 150px; /* Smaller for mobile */
+                height: 150px;
+                border-radius: 20px;
+                object-fit: cover;
+                /* background: linear-gradient(135deg, var(--accent), #7c3aed); */
+                justify-content: center;
+        }
+        @media (min-width: 768px) {
+                .photo {
+                        width: 200px; /* Larger for Desktop */
+                        height: 200px;
+                }
+        }
+        .interests-container ul {
+                padding: 0px;
+                list-style-type: none;
+                display: grid;
+                grid-template-columns: 1fr;
+        }
+        .interests-container ul li {
+                display: flex;
+                grid-template-columns: 1fr;
+                list-style-type: none;
+                font-weight: 500;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 12px;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+                padding: 10px;
+                margin: 6px 35px;
+                transition:
+                        box-shadow 0.2s,
+                        transform 0.3s,
+                        background-color 0.3s;
+        }
+        .interests-container ul li:hover {
+                background: rgba(14, 165, 163, 0.15);
+                box-shadow: 0 0 20px rgba(17, 185, 183, 0.719);
+                transform: scale(1.05);
+        }
+        @media (min-width: 768px) {
+                .interests-container ul {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                }
+        }
+</style>

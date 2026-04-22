@@ -1,0 +1,168 @@
+---
+import Footer from "../components/content/Footer.astro";
+
+import { ClientRouter } from "astro:transitions";
+
+import "@fontsource/jetbrains-mono/400.css"; /* Regular */
+import "@fontsource/jetbrains-mono/700.css"; /* Bold */
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+		/>
+		<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+		<meta name="theme-color" content="#0f172a" />
+		<link rel="icon" href="/assets/favicon.svg" />
+		<meta name="Jhnrs - Astro Portfolio" content="" />
+		<title>Jhnrs - Portfolio</title>
+
+		<ClientRouter /> <!-- to make website function as SPA -->
+
+		<style is:global>
+			:root {
+				--background: rgba(#0ea5a3);
+				
+				--dark-background: #000000;
+				--light-text: #ffffff;
+				--card-dark-background: rgba(255, 255, 255, 0.09);
+				/* --card-light-background: rgba(26, 14, 201, 0.05); */
+				--bg-gradient: linear-gradient(
+					135deg,
+					#0f172a,
+					#1e293b,
+					#1a1946,
+					#1e0720
+				);
+				--muted: #94a3b8;
+				--accent: #0ea5a3;
+				--highlight: #1bdaf3;
+
+				--font-main: "JetBrains Mono", 'Courier New', Courier, monospace;
+			}
+			* {
+				box-sizing: border-box;
+				text-wrap: wrap;
+			}
+			a {
+				color: var(--accent);
+			}
+			html,
+			body {
+				margin: 0;
+				width: 100%;
+				height: 100%;
+				font-family: "JetBrains Mono", 'Courier New', Courier, monospace
+					/* 'Courier New', Courier, monospace */;
+				font-size: 16px;
+				font-weight: 400;
+				letter-spacing: -0.01em;
+				-webkit-font-smoothing: antialiased; /* valid css styling for macOS and iOS smooth rendering */
+			}
+			html {
+				height: 100svh;
+				height: 100dvh;
+				height: -webkit-fill-available;
+				background: #000000;
+				scroll-behavior: smooth;
+			}
+			a {
+				text-decoration: none;
+			}
+			body {
+				font-family: "Segoe UI", Tahoma;
+				background: inherit;
+				color: #ffffff;
+				margin: 0;
+				padding: 0;
+				min-height: 100vh;
+				min-height: 100dvh;
+				min-height: -webkit-fill-available;
+				cursor: default; /* For the cursor, for Desktops, to not trigger its "Text" Icon mode */
+				user-select: none; /* This property is useful for making the page non-selectable */
+				transition: background-color 0.3s, color 0.3s
+			}
+			body::after {
+				content: "";
+				position: fixed;
+				top: 100vh;
+				top: 100dvh;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: -1;
+			}
+			main {
+				margin-top: 120px; /* Use fixed px or rem for predictable top spacing */
+				flex: 1;
+			}
+			h1 {
+				text-align: center;
+				background: rgba(255, 255, 255, 0.05);
+				border-radius: 12px;
+				box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+				padding: 10px 30px; /* padding: top right bottom left */
+				margin: 0px auto 10px;
+				width: fit-content;
+				justify-content: center;
+			}
+			h2 {
+				text-align: center;
+				background: rgba(255, 255, 255, 0.05);
+				border-radius: 12px;
+				box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+				padding: 10px 30px; /* padding: top right bottom left */
+				margin: 0px auto 10px;
+				justify-content: center;
+			}
+			h3 {
+				background: rgba(255, 255, 255, 0.05);
+				border-radius: 12px;
+				box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+				padding: 10px 15px; /* padding: top right bottom left */
+				margin: 0px;
+				width: fit-content;
+			}
+			h4 {
+				margin: 20px 10px 10px;
+			}
+			.subtitle {
+				color: var(--muted);
+				margin-top: 6px;
+				margin-bottom: 30px;
+			}
+
+			#about,
+			#projects {
+				scroll-margin-top: 130px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<main>
+			<slot />
+		</main>
+		<Footer />
+
+		<script>
+			import {animate, inView } from 'motion'
+
+			const initAnimations = () => {
+				inView('[data-animate]', (element) => {
+					animate(
+						element,
+						{ y: [20, 0], opacity: [0, 1] },
+						{ duration: 0.3 }
+					)
+				})
+			}
+
+			initAnimations();
+		</script>
+	</body>
+</html>

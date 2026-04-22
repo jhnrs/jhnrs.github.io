@@ -1,0 +1,239 @@
+---
+interface ProgrammingLanguage {
+    name: string;
+    icon: string;
+}
+
+interface Framework {
+    name: string;
+    icon: string;
+}
+
+interface WebTechnologies {
+    name: string;
+    icon: string;
+}
+
+const programmingLanguages: ProgrammingLanguage[] = [
+    {
+        name: "Dart",
+        icon: "assets/icons/dart.svg",
+    },
+    {
+        name: "C#",
+        icon: "assets/icons/csharp.svg",
+    },
+    {
+        name: "C++",
+        icon: "assets/icons/cpp.svg",
+    },
+    {
+        name: "Java",
+        icon: "assets/icons/java.svg",
+    },
+    {
+        name: "JavaScript",
+        icon: "assets/icons/javascript.svg",
+    },
+    {
+        name: "TypeScript",
+        icon: "assets/icons/typescript.svg",
+    },
+];
+
+const frameworks: Framework[] = [
+    {
+        name: "Flutter",
+        icon: "assets/icons/flutter.svg",
+    },
+    {
+        name: "React",
+        icon: "assets/icons/react.svg",
+    },
+    {
+        name: "React Native",
+        icon: "assets/icons/reactnative.svg",
+    },
+    {
+        name: "Expo",
+        icon: "assets/icons/expo.svg",
+    },
+    {
+        name: "Astro",
+        icon: "assets/icons/astro.svg",
+    },
+];
+
+const webTechnologies: WebTechnologies[] = [
+    {
+        name: "HTML",
+        icon: "assets/icons/html.svg",
+    },
+    {
+        name: "CSS",
+        icon: "assets/icons/css.svg",
+    },
+];
+
+const programmingLanguagesSorted = [...programmingLanguages].sort((a, b) =>
+    a.name.localeCompare(b.name),
+);
+const frameworksSorted = [...frameworks].sort((a, b) =>
+    a.name.localeCompare(b.name),
+);
+const webTechSorted = [...webTechnologies].sort((a, b) =>
+    a.name.localeCompare(b.name),
+);
+---
+
+<section>
+    <h2>Tech Stack</h2>
+    <div class="divided-content">
+        <div class="tech-stack-container">
+            
+            <h4>Programming Languages</h4>
+            <div class="chips-container">
+                {
+                    programmingLanguagesSorted.map((programmingLanguage) => (
+                        <div class="chip" id={programmingLanguage.name}>
+                            <img
+                                src={programmingLanguage.icon}
+                                alt={`${programmingLanguage.name} icon`}
+                                class="chip-icon"
+                            />
+                            {programmingLanguage.name}
+                        </div>
+                    ))
+                }
+            </div>
+
+            <h4>Frameworks</h4>
+            <div class="chips-container">
+                {
+                    frameworksSorted.map((framework) => (
+                        <div class="chip" id={framework.name}>
+                            <img
+                                src={framework.icon}
+                                alt={`${framework.name} icon`}
+                                class="chip-icon"
+                            />
+                            {framework.name}
+                        </div>
+                    ))
+                }
+            </div>
+
+            <h4>Web Technologies</h4>
+            <div class="chips-container">
+                {
+                    webTechSorted.map((webTech) => (
+                        <div class="chip" id={webTech.name}>
+                            <img
+                                src={webTech.icon}
+                                alt={`${webTech.name} icon`}
+                                class="chip-icon"
+                            />
+                            {webTech.name}
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+
+        <!-- <div class="right">
+        </div> -->
+    </div>
+</section>
+
+<style>
+    .divided-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .divided-content .tech-stack-container {
+        flex: 1;
+    }
+    .divided-content .right {
+        justify-content: center;
+        content-visibility: visible;
+        flex: 1;
+        width: 100%;
+        height: 100%;
+    }
+
+    .tech-stack-container {
+        padding: 1px;
+        text-align: center;
+    }
+    .chip-info {
+        display: flex;
+        flex-direction: column;
+        max-width: fit-content;
+        max-height: fit-content;
+    }
+
+    .p-emphasis {
+        padding: 10px 0px;
+        margin: 0px 0px; /* before: margin: 0px 20px; */
+        font-weight: bold;
+    }
+    .chips-container {
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 0; /* padding: top right bottom left */
+        justify-content: center;
+    }
+    .chip {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        /*   min-width: 80px;
+  max-width: 120px; */
+        height: 30px;
+        width: fit-content;
+        padding: 0 8px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 250px;
+        margin: 6px 0 0 0;
+        font-size: 0.92rem;
+        font-weight: 500;
+        gap: 6px;
+        white-space: nowrap;
+        box-sizing: border-box;
+        transition:
+            ease 0.2s,
+            box-shadow 0.2s,
+            transform 0.3s;
+    }
+    .chip:hover {
+        cursor: pointer;
+        background: rgba(14, 165, 163, 0.15);
+        box-shadow: 0 0 20px rgba(17, 185, 183, 0.719);
+        transform: scale(1.05);
+    }
+    .chip:not(:hover) {
+        transition:
+            ease 0.2s,
+            box-shadow 0.2s,
+            transform 0.3s;
+    }
+    .chip.active {
+        background: rgba(14, 165, 163, 0.15);
+        box-shadow: 0 0 20px rgba(17, 185, 183, 0.719);
+        transform: scale(1.05);
+    }
+    .chip-icon {
+        width: 23px;
+        height: 23px;
+        margin-right: 4px;
+        flex-shrink: 0;
+        display: inline-block;
+        object-fit: contain;
+    }
+</style>
+
+<script src="../../scripts/techStackInfo.ts"></script>

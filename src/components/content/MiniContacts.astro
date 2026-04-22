@@ -1,0 +1,39 @@
+---
+import Card from "../reusables/Card.astro";
+import { ContactLinkType } from "../reusables/Contact.astro";
+import MiniContactIcon from "../reusables/MiniContactIcon.astro";
+---
+
+<Card>
+    <div class="mini-contact-icons">
+        <MiniContactIcon
+            link="johnrosales933@gmail.com"
+            imgName="Gmail"
+            imgsrc="assets/icons/gmail.svg"
+            linkType={ContactLinkType.email}
+            opensNewTab={true}
+        />
+        <MiniContactIcon
+            link="github.com/jhnrs"
+            imgName="Github"
+            imgsrc="assets/icons/github.svg"
+            linkType={ContactLinkType.webpage}
+            opensNewTab={true}
+        />
+        <MiniContactIcon
+            link="linkedin.com/in/justjohn07"
+            imgName="LinkedIn"
+            imgsrc="assets/icons/linkedin.svg"
+            linkType={ContactLinkType.webpage}
+            opensNewTab={true}
+        />
+    </div>
+</Card>
+
+<style>
+    .mini-contact-icons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+</style>

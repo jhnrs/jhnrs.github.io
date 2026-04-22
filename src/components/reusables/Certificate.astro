@@ -1,0 +1,76 @@
+---
+import { Image } from 'astro:assets'
+import Navigate from './Navigate.astro';
+interface Props {
+    img?: string;
+    title: string;
+    organization: string;
+    platform: string;
+    certificationLink: string;
+    date: string;
+    type?: CertType
+}
+
+/* relevant? */
+export enum CertType {
+    Course = 'Course Certificate',
+    Seminar = 'Certificate of Participation',
+    Webinar = 'Certificate of Attendance'
+}
+
+/* export enum CertType {
+    // Course = 'COURSE',
+    // Seminar = 'SEMINAR',
+    Workshop = 'WORKSHOP',
+    Conference = 'CONFERENCE',
+    Webinar = 'WEBINAR',
+    Event = 'EVENT'
+} */
+
+const certification = Astro.props;
+---
+
+<div class="certificate">
+    <h3>{certification.title}</h3>
+    {certification.img && <a href={certification.certificationLink}><img src={certification.img} alt={`${certification.title} Certificate`} /></a>}
+    <h4>Certificate Details:</h4>
+    <ul>
+        <li><strong>Organization:</strong> {certification.organization}</li>
+        <li><strong>Platform:</strong> {certification.platform}</li>
+        <li><strong>Date:</strong> {certification.date}</li>
+        {certification.type && <li><strong>Type:</strong> {certification.type}</li>}
+    </ul>
+    <h4 class="align-end">
+        <Navigate to={certification.certificationLink} text='Link' opensNewTab={true} icon='arrow-outward-rounded' />
+    </h4>
+</div>
+
+ <style>
+    .align-end {
+        text-align: end;
+    }
+    .certificate {
+        overflow-wrap: break-word;
+    }
+    .certificate-content {
+        margin: 0 auto;
+    }
+    img {
+        display: flex;
+        margin: 20px auto;
+        justify-content: center;
+        width: 50vw;
+        height: 25vh;
+        object-fit: contain;
+        overflow: hidden;
+        text-align: center;
+        align-self: center;
+        align-content: center;
+    }
+    @media (min-width: 768px) {
+        img {
+            width: 50vw;
+            height: 50vh;
+        }
+    }
+ </style>

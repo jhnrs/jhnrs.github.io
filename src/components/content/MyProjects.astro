@@ -1,0 +1,36 @@
+---
+import Project from "../reusables/Project.astro";
+import Navigate from "../reusables/Navigate.astro";
+---
+
+<section id="projects" data-aos="fade-up">
+  <h2>Personal Projects</h2>
+
+  <Navigate to="/projects#markly">
+    <Project
+      title="📝Markly"
+      description="A note-taking app with the concept tailored for developers."
+      status="Work in progress"
+    />
+  </Navigate>
+
+  <Navigate to="/projects#musicly">
+    <Project
+      title="📃Zealify"
+      description="A developer-friendly app that puts programming documentation right in your pocket."
+      status="Work in progress"
+    />
+  </Navigate>
+
+  <Navigate to="/projects#zealify">
+    <Project
+      title="🎧Musicly"
+      description="A cross-platform music app built with flutter, giving seamless access to your favorite tracks. It lets you enjoy and
+                organize your favorite tracks with a simple, easy-to-use interface."
+      status="Work in progress"
+    />
+  </Navigate>
+
+  <p>For full details, check here:</p>
+  <a href="/projects">Check out my projects!</a>
+</section>

@@ -1,0 +1,35 @@
+---
+export interface Props {
+    id?: string;
+    name: string;
+    description: string;
+    link: string;
+    linkLabel: string;
+    icon: string;
+}
+const { id, name, description, link, linkLabel, icon } = Astro.props;
+---
+
+<div id={id} class="card" data-aos="zoom-in">
+    <h2>
+        <img 
+            id={id} 
+            src={`/assets/icons/${icon}`} 
+            class="chip-icon" 
+            alt={`${name} icon`} 
+        />
+        <span id="display-title">{name}</span>
+    </h2>
+    <p id="display-desc">{description}</p>
+    <div style="text-align: center;">
+        <span>🔗</span>
+        <a 
+            id={id} 
+            href={link} 
+            target="_blank" 
+            rel="noopener noreferrer"
+        >
+            {linkLabel}
+        </a>
+    </div>
+</div>
