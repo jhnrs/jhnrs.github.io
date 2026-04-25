@@ -5,6 +5,10 @@ import NavigationItem from "../components/reusables/NavigationItem.astro";
 import Certificate from "../components/reusables/Certificate.astro";
 import { CertType } from "../components/reusables/Certificate.astro";
 import Card from "../components/reusables/Card.astro";
+
+import TechnicalSupportFundamentalsCert from '../../public/assets/certificates/Coursera 3KTR6PPZ7PIO.webp';
+import GoogleAIEssentialCert from '../../public/assets/certificates/Coursera 3KTR6PPZ7PIO.webp';
+import TheBitsAndBytesOfComputerNetworkingCert from '../../public/assets/certificates/Coursera 3KTR6PPZ7PIO.webp';
 ---
 
 <Layout>
@@ -22,7 +26,7 @@ import Card from "../components/reusables/Card.astro";
                         title="Google AI Essentials"
                         organization="Google"
                         platform="Coursera"
-                        img="assets/certificates/Coursera 2KTNAVVUQUA5.webp"
+                        img={GoogleAIEssentialCert}
                         certificationLink="https://coursera.org/share/2f854c3e23f5a777f6c86e1c89aefb7e"
                         date="February 24, 2026"
                     />
@@ -32,7 +36,7 @@ import Card from "../components/reusables/Card.astro";
                         title="Technical Support Fundamentals"
                         organization="Google"
                         platform="Coursera"
-                        img="assets/certificates/Coursera 3KTR6PPZ7PIO.webp"
+                        img={TechnicalSupportFundamentalsCert}
                         certificationLink="https://coursera.org/share/ae3f40caf7de7a34f276306f591cbe9a"
                         date="February 17, 2026"
                     />
@@ -42,7 +46,7 @@ import Card from "../components/reusables/Card.astro";
                         title="The Bits and Bytes of Computer Networking"
                         organization="Google"
                         platform="Coursera"
-                        img="/assets/certificates/Coursera Z9OPMZCWBNIU.webp"
+                        img={TheBitsAndBytesOfComputerNetworkingCert}
                         certificationLink="https://coursera.org/share/adc44be2e0cb34f63a35fd663c4a658d"
                         date="March 25, 2026"
                     />

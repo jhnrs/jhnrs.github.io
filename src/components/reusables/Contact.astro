@@ -22,7 +22,7 @@ const externalAttributes = opensNewTab ? { target: "_blank", rel: "noopener nore
 
 <div class="contact-info-container">
     <a href={finalHref} {...externalAttributes}>
-        <img src={imgsrc} alt={`${imgName} icon`} class="contact-icon" />
+        <img src={imgsrc} alt={`${imgName} icon`} class="contact-icon" loading="lazy" />
     </a>
     <div class="contact-info-text">
         <span>{label}: </span>

@@ -23,6 +23,7 @@ const { title, link, icon, showTitle = true } = Astro.props as Props;
         gap: 0.5rem;
         flex-shrink: 0;
         padding: 12px;
+        mix-blend-mode: color-dodge; /* to make text to be distinctive on light backgrounds */
         color: var(--muted);
         text-decoration: none;
         text-align: center;

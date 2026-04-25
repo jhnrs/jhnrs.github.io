@@ -3,8 +3,13 @@ import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/reusables/Navigation.astro";
 import NavigationItem from "../components/reusables/NavigationItem.astro";
 import Project from "../components/reusables/Project.astro";
-import Text from "../components/reusables/Text.astro";
 import Card from "../components/reusables/Card.astro";
+
+import ZealifyAppImage1 from '../apps/zealify/zealify_app_image_1.png';
+import ZealifyAppImage2 from '../apps/zealify/zealify_app_image_2.png';
+import ZealifyAppImage3 from '../apps/zealify/zealify_app_image_3.png';
+import ZealifyAppImage4 from '../apps/zealify/zealify_app_image_4.png';
+import ZealifyAppImage5 from '../apps/zealify/zealify_app_image_5.png';
 ---
 
 <Layout>
@@ -54,10 +59,32 @@ import Card from "../components/reusables/Card.astro";
                             documentation, without relying on AI tools but using AI as a guide/companion. "
             status="Work-in-progress"
             features={[
-                'On-device AI integration for ease of use enhancing in searches, summaries, etc.',
+                "On-device AI integration for ease of use enhancing in searches, summaries, etc. (I'm still working on this one.)",
                 'Support for different programming languages and frameworks.',
                 'Download resources for offline use.',
                 /* 'Dark theme tuned for preventing eye-strain. (specifically tuned for OLED devices.)' */
+            ]}
+            images={[
+                {
+                    imgSrc: ZealifyAppImage1,
+                    alt: 'Zealify App Image 1'
+                },
+                {
+                    imgSrc: ZealifyAppImage2,
+                    alt: 'Zealify App Image 2'
+                },
+                {
+                    imgSrc: ZealifyAppImage3,
+                    alt: 'Zealify App Image 3'
+                },
+                {
+                    imgSrc: ZealifyAppImage4,
+                    alt: 'Zealify App Image 4'
+                },
+                {
+                    imgSrc: ZealifyAppImage5,
+                    alt: 'Zealify App Image 5'
+                },
             ]}
         />
     </Card>

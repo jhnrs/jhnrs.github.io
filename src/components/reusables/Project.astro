@@ -1,4 +1,7 @@
 ---
+import type { ImgAttributes } from 'astro:assets';
+import { Image } from 'astro:assets';
+
 interface Props {
     id?: string;
     title: string;
@@ -7,6 +10,7 @@ interface Props {
     features?: string[];
     section?: Section[];
     onlySummary?: boolean;
+    images?: AppImages[]
 }
 
 interface Section {
@@ -19,6 +23,10 @@ interface Feature {
     description: string;
 }
 
+interface AppImages {
+    imgSrc: ImageMetadata;
+    alt: string;
+}
 const project = Astro.props;
 /* to create optional named sections for every feature provided */
 ---
@@ -44,8 +52,42 @@ const project = Astro.props;
                             ))}
                         </ul>
                     )}
+                    <p><strong>Images: </strong></p>
+                    {project.images && (
+                        <div class="app-images">
+                            <ul>
+                                {project.images.map((image) => (
+                                    <li>
+                                        <Image src={image.imgSrc} alt={`${image.alt}`} height={500} width={300} class='responsive-img' />
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
                 </div>
             )
         }
+
     </div>
 </section>
+
+<style>
+    .app-images ul {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        padding: 0;
+        list-style-type: none;
+        overflow-x: auto;
+        /* overscroll-behavior-x: contain; */ /* Prevents scroll chaining to the whole page */
+    }
+    .image-item {
+        flex: 0 0 auto; /* Prevents images from shrinking */
+    }
+    .responsive-img {
+        aspect-ratio: 180 / 403;
+        object-fit: cover;
+        border-radius: 12px;
+        height: auto;
+    }
+</style>

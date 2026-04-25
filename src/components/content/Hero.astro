@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets"
 import Photo from "../reusables/Photo.astro"
-import professionalImage from 'assets/profile/professional_profile.jpeg'
+import ProfessionalImage from '../../../public/assets/profile/professional_profile.webp'
 import MiniContactIcon from "../reusables/MiniContactIcon.astro"
 import MiniContacts from "./MiniContacts.astro"
 ---
@@ -41,7 +41,8 @@ import MiniContacts from "./MiniContacts.astro"
 <header class="hero">
     <div class="profile-section">
         <!-- <Photo src="assets/profile/profile-photo.webp" alt="me" class="photo" /> -->
-        <Photo src="assets/profile/professional_profile.webp" alt="me" class="photo" />
+         <Image src={ProfessionalImage} class='photo' alt='me' loading={"eager"} />
+        <!-- <Photo src="assets/profile/professional_profile.webp" alt="me" class="photo" /> -->
         <!-- <img src="assets/profile/profile-photo.webp" alt="me" class="photo" /> -->
         <div class="text-content">
 

@@ -1,4 +1,4 @@
-const skillData: Record<string, any> = {
+export const skillData: Record<string, any> = {
     "Dart": {
         "programmingLanguageName": "Dart",
         "description": "A client-optimized language by Google for fast apps on any platform, powering Flutter",

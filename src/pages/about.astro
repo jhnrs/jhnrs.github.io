@@ -8,6 +8,9 @@ import NavigationItems from "../components/reusables/NavigationItem.astro";
 import Navigation from "../components/reusables/Navigation.astro";
 import Photo from "../components/reusables/Photo.astro";
 import Navigate from "../components/reusables/Navigate.astro";
+
+import MyAnotherImage from '../../public/assets/profile/profile-photo.webp';
+import { Image } from "astro:assets";
 ---
 
 <!-- Need refinements on content -->
@@ -16,7 +19,7 @@ import Navigate from "../components/reusables/Navigate.astro";
                 <NavigationItems link="/" title="Home" icon="home-rounded" />
         </Navigation>
 
-        <Photo src="assets/profile/profile-photo.webp" alt="me" class="photo" />
+        <Image src={MyAnotherImage} alt="me" class="photo" loading={'eager'} />
 
         <Card>
                 <section id="about">

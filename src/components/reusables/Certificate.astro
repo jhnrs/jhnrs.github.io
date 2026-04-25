@@ -1,21 +1,21 @@
 ---
-import { Image } from 'astro:assets'
-import Navigate from './Navigate.astro';
+import { Image } from "astro:assets";
+import Navigate from "./Navigate.astro";
 interface Props {
-    img?: string;
+    img?: ImageMetadata;
     title: string;
     organization: string;
     platform: string;
     certificationLink: string;
     date: string;
-    type?: CertType
+    type?: CertType;
 }
 
 /* relevant? */
 export enum CertType {
-    Course = 'Course Certificate',
-    Seminar = 'Certificate of Participation',
-    Webinar = 'Certificate of Attendance'
+    Course = "Course Certificate",
+    Seminar = "Certificate of Participation",
+    Webinar = "Certificate of Attendance",
 }
 
 /* export enum CertType {
@@ -32,20 +32,45 @@ const certification = Astro.props;
 
 <div class="certificate">
     <h3>{certification.title}</h3>
-    {certification.img && <a href={certification.certificationLink}><img src={certification.img} alt={`${certification.title} Certificate`} /></a>}
+    {
+        certification.img && (
+            <a href={certification.certificationLink}>
+                <Image
+                    width={800}
+                    height={566}
+                    quality={'high'}
+                    src={certification.img}
+                    alt={`${certification.title} Certificate`}
+                    class="image-styling"
+                    loading={'eager'}
+                />
+            </a>
+        )
+    }
     <h4>Certificate Details:</h4>
     <ul>
         <li><strong>Organization:</strong> {certification.organization}</li>
         <li><strong>Platform:</strong> {certification.platform}</li>
         <li><strong>Date:</strong> {certification.date}</li>
-        {certification.type && <li><strong>Type:</strong> {certification.type}</li>}
+        {
+            certification.type && (
+                <li>
+                    <strong>Type:</strong> {certification.type}
+                </li>
+            )
+        }
     </ul>
     <h4 class="align-end">
-        <Navigate to={certification.certificationLink} text='Link' opensNewTab={true} icon='arrow-outward-rounded' />
+        <Navigate
+            to={certification.certificationLink}
+            text="Link"
+            opensNewTab={true}
+            icon="arrow-outward-rounded"
+        />
     </h4>
 </div>
 
- <style>
+<style>
     .align-end {
         text-align: end;
     }
@@ -55,22 +80,22 @@ const certification = Astro.props;
     .certificate-content {
         margin: 0 auto;
     }
-    img {
-        display: flex;
-        margin: 20px auto;
-        justify-content: center;
-        width: 50vw;
-        height: 25vh;
+    .image-styling {
+        padding-top: 10px;
+        display: block;
+        margin-inline: auto;
+        max-width: 600px;
+        aspect-ratio: 1.414 / 1;
+        height: auto;
+        width: 100%;
+        /* width: 50vw;
+        height: 25vh; */
         object-fit: contain;
         overflow: hidden;
-        text-align: center;
-        align-self: center;
-        align-content: center;
     }
-    @media (min-width: 768px) {
-        img {
-            width: 50vw;
-            height: 50vh;
+    /* @media (min-width: 768px) {
+        .image-styling {
+            aspect-ratio: 1.41 /1 ;
         }
-    }
- </style>
+    } */
+</style>
