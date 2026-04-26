@@ -1,77 +1,113 @@
 ---
-interface ProgrammingLanguage {
-    name: string;
-    icon: string;
-}
+import TechStackChip, {
+    TechnologyType,
+    type Technology,
+} from "../reusables/TechStackChip.astro";
 
-interface Framework {
-    name: string;
-    icon: string;
-}
+// Programming Language Icons
+import JavaIcon from "../../../public/assets/icons/java.svg";
+import DartIcon from "../../../public/assets/icons/dart.svg";
+import CSharpIcon from "../../../public/assets/icons/csharp.svg";
+import CPlusPlusIcon from "../../../public/assets/icons/cpp.svg";
+import JavaScriptIcon from "../../../public/assets/icons/javascript.svg";
+import TypeScriptIcon from "../../../public/assets/icons/typescript.svg";
 
-interface WebTechnologies {
-    name: string;
-    icon: string;
-}
+// Framework Icons
+import FlutterIcon from "../../../public/assets/icons/flutter.svg";
+import ReactIcon from "../../../public/assets/icons/react.svg";
+import ReactNativeIcon from "../../../public/assets/icons/reactnative.svg";
+import ExpoIcon from "../../../public/assets/icons/expo.svg";
+import AstroIcon from "../../../public/assets/icons/astro.svg";
 
-const programmingLanguages: ProgrammingLanguage[] = [
+// Web Technology Icons
+import HTMLIcon from "../../../public/assets/icons/html.svg";
+import CSSIcon from "../../../public/assets/icons/css.svg";
+
+// Tool Icons
+import VSCodeIcon from "../../../public/assets/icons/vscode.svg";
+import GithubIcon from "../../../public/assets/icons/github.svg";
+
+const programmingLanguages: Technology[] = [
     {
         name: "Dart",
-        icon: "assets/icons/dart.svg",
+        icon: DartIcon,
+        type: TechnologyType.progLang,
     },
     {
         name: "C#",
-        icon: "assets/icons/csharp.svg",
+        icon: CSharpIcon,
+        type: TechnologyType.progLang,
     },
     {
         name: "C++",
-        icon: "assets/icons/cpp.svg",
+        icon: CPlusPlusIcon,
+        type: TechnologyType.progLang,
     },
     {
         name: "Java",
-        icon: "assets/icons/java.svg",
+        icon: JavaIcon,
+        type: TechnologyType.progLang,
     },
     {
         name: "JavaScript",
-        icon: "assets/icons/javascript.svg",
+        icon: JavaScriptIcon,
+        type: TechnologyType.progLang,
     },
     {
         name: "TypeScript",
-        icon: "assets/icons/typescript.svg",
+        icon: TypeScriptIcon,
+        type: TechnologyType.progLang,
     },
 ];
-
-const frameworks: Framework[] = [
+const frameworks: Technology[] = [
     {
         name: "Flutter",
-        icon: "assets/icons/flutter.svg",
+        icon: FlutterIcon,
+        type: TechnologyType.framework,
     },
     {
         name: "React",
-        icon: "assets/icons/react.svg",
+        icon: ReactIcon,
+        type: TechnologyType.framework,
     },
     {
         name: "React Native",
-        icon: "assets/icons/reactnative.svg",
+        icon: ReactNativeIcon,
+        type: TechnologyType.framework,
     },
     {
         name: "Expo",
-        icon: "assets/icons/expo.svg",
+        icon: ExpoIcon,
+        type: TechnologyType.framework,
     },
     {
         name: "Astro",
-        icon: "assets/icons/astro.svg",
+        icon: AstroIcon,
+        type: TechnologyType.framework,
     },
 ];
-
-const webTechnologies: WebTechnologies[] = [
+const webTechnologies: Technology[] = [
     {
         name: "HTML",
-        icon: "assets/icons/html.svg",
+        icon: HTMLIcon,
+        type: TechnologyType.webTech,
     },
     {
         name: "CSS",
-        icon: "assets/icons/css.svg",
+        icon: CSSIcon,
+        type: TechnologyType.webTech,
+    },
+];
+const tools: Technology[] = [
+    {
+        name: "Visual Studio Code",
+        icon: VSCodeIcon,
+        type: TechnologyType.tool,
+    },
+    {
+        name: "Github",
+        icon: GithubIcon,
+        type: TechnologyType.tool,
     },
 ];
 
@@ -84,26 +120,24 @@ const frameworksSorted = [...frameworks].sort((a, b) =>
 const webTechSorted = [...webTechnologies].sort((a, b) =>
     a.name.localeCompare(b.name),
 );
+const toolsSorted = [...tools].sort((a, b) => a.name.localeCompare(b.name));
 ---
 
 <section>
     <h2>Tech Stack</h2>
     <div class="divided-content">
         <div class="tech-stack-container">
-            
             <h4>Programming Languages</h4>
             <div class="chips-container">
                 {
                     programmingLanguagesSorted.map((programmingLanguage) => (
-                        <div class="chip" id={programmingLanguage.name}>
-                            <img
-                                src={programmingLanguage.icon}
-                                alt={`${programmingLanguage.name} icon`}
-                                class="chip-icon"
-                                loading="eager"
-                            />
-                            {programmingLanguage.name}
-                        </div>
+                        <TechStackChip
+                            data={{
+                                name: programmingLanguage.name,
+                                icon: programmingLanguage.icon,
+                                type: programmingLanguage.type,
+                            }}
+                        />
                     ))
                 }
             </div>
@@ -112,15 +146,13 @@ const webTechSorted = [...webTechnologies].sort((a, b) =>
             <div class="chips-container">
                 {
                     frameworksSorted.map((framework) => (
-                        <div class="chip" id={framework.name}>
-                            <img
-                                src={framework.icon}
-                                alt={`${framework.name} icon`}
-                                class="chip-icon"
-                                loading="eager"
-                            />
-                            {framework.name}
-                        </div>
+                        <TechStackChip
+                            data={{
+                                name: framework.name,
+                                icon: framework.icon,
+                                type: framework.type,
+                            }}
+                        />
                     ))
                 }
             </div>
@@ -129,15 +161,26 @@ const webTechSorted = [...webTechnologies].sort((a, b) =>
             <div class="chips-container">
                 {
                     webTechSorted.map((webTech) => (
-                        <div class="chip" id={webTech.name}>
-                            <img
-                                src={webTech.icon}
-                                alt={`${webTech.name} icon`}
-                                class="chip-icon"
-                                loading="lazy"
-                            />
-                            {webTech.name}
-                        </div>
+                        <TechStackChip
+                            data={{
+                                name: webTech.name,
+                                icon: webTech.icon,
+                                type: webTech.type,
+                            }}
+                        />
+                    ))
+                }
+            </div>
+
+            <h4>Tools</h4>
+            <div class="chips-container">
+                {
+                    toolsSorted.map((tool) => (
+                        <TechStackChip data={{
+                            name: tool.name,
+                            icon: tool.icon,
+                            type: tool.type
+                        }} />
                     ))
                 }
             </div>
@@ -190,6 +233,7 @@ const webTechSorted = [...webTechnologies].sort((a, b) =>
         padding: 0; /* padding: top right bottom left */
         justify-content: center;
     }
+    /* To be remove related styling to .chip as it is not used */
     .chip {
         display: inline-flex;
         align-items: center;

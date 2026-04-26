@@ -50,7 +50,7 @@ export const skillData: Record<string, any> = {
 }
 
 // Cache the DOM elements (O(1) access later)
-const parentEl = document.getElementById('chip-parent');
+// const parentEl = document.getElementById('chip-parent');
 const titleEl = document.getElementById('display-title');
 const descEl = document.getElementById('display-desc');
 const linkEl = document.getElementById('display-link') as HTMLAnchorElement;

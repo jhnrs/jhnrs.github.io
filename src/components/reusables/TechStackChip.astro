@@ -1,0 +1,80 @@
+---
+import { Image } from "astro:assets";
+
+export interface Props {
+    data: Technology
+}
+
+export enum TechnologyType {
+    progLang = "programmingLanguage",
+    webTech = "webTechnologies",
+    framework = "framework",
+    tool = "tool",
+}
+
+export interface Technology {
+    name: string;
+    icon: ImageMetadata;
+    type: TechnologyType
+}
+
+const techStack = Astro.props;
+---
+
+<div class="chipTechStack" id={techStack.data.name}>
+    <Image
+        src={techStack.data.icon}
+        alt={techStack.data.name}
+        width={23}
+        height={23}
+        class='chipTechStack-icon'
+    />
+    {techStack.data.name}
+</div>
+
+<style>
+    /* to migrate .chip css styling from TechStack.astro */
+    .chipTechStack {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+        width: fit-content;
+        padding: 0 8px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 250px;
+        margin: 6px 0 0 0;
+        font-size: 0.92rem;
+        font-weight: 500;
+        gap: 6px;
+        white-space: nowrap;
+        box-sizing: border-box;
+        transition: 
+            ease 0.2s,
+            box-shadow 0.2s,
+            transform 0.3s;
+    }
+    .chipTechStack:hover {
+        cursor: pointer;
+        background: rgba(14, 165, 163, 0.15);
+        box-shadow: 0 0 20px rgba(17, 185, 183, 0.719);
+        transform: scale(1.05);
+    }
+    .chipTechStack:not(:hover) {
+        transition: 
+            ease 0.2s,
+            box-shadow 0.2s,
+            transform 0.3s;
+    }
+    .chipTechStack.active {
+        background: rgba(14, 165, 163, 0.15);
+        box-shadow: 0 0 20px rgba(17, 185, 183, 0.719);
+        transform: scale(1.05);
+    }
+    .chipTechStack-icon {
+        margin-right: 4px;
+        flex-shrink: 0;
+        display: inline-block;
+        object-fit: contain;
+    }
+</style>
