@@ -2,6 +2,9 @@
 import Card from "../reusables/Card.astro";
 import { ContactLinkType } from "../reusables/Contact.astro";
 import MiniContactIcon from "../reusables/MiniContactIcon.astro";
+import GmailIcon from '../../../public/assets/icons/gmail.svg';
+import LinkedInIcon from '../../../public/assets/icons/linkedin.svg';
+import GithubIcon from '../../../public/assets/icons/github.svg';
 ---
 
 <Card>
@@ -9,21 +12,21 @@ import MiniContactIcon from "../reusables/MiniContactIcon.astro";
         <MiniContactIcon
             link="johnrosales933@gmail.com"
             imgName="Gmail"
-            imgsrc="assets/icons/gmail.svg"
+            imgsrc={GmailIcon}
             linkType={ContactLinkType.email}
             opensNewTab={true}
         />
         <MiniContactIcon
             link="github.com/jhnrs"
             imgName="Github"
-            imgsrc="assets/icons/github.svg"
+            imgsrc={GithubIcon}
             linkType={ContactLinkType.webpage}
             opensNewTab={true}
         />
         <MiniContactIcon
             link="linkedin.com/in/justjohn07"
             imgName="LinkedIn"
-            imgsrc="assets/icons/linkedin.svg"
+            imgsrc={LinkedInIcon}
             linkType={ContactLinkType.webpage}
             opensNewTab={true}
         />

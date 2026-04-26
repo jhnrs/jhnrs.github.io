@@ -1,39 +1,50 @@
 ---
-import { ContactLinkType } from './Contact.astro';
+import { Image } from "astro:assets";
+import { ContactLinkType } from "./Contact.astro";
 interface Props {
     link: string;
-    imgsrc: string;
+    imgsrc: ImageMetadata;
     imgName: string;
     linkType?: ContactLinkType;
     opensNewTab?: boolean;
 }
 const { link: href, imgsrc, imgName, linkType, opensNewTab } = Astro.props;
 // Determine the actual URL: adds mailto: if it's an email type
-const finalHref = linkType === ContactLinkType.email ? `mailto:${href}` : `https://${href}`;
+const finalHref =
+    linkType === ContactLinkType.email ? `mailto:${href}` : `https://${href}`;
 
 // Spreadable object for external links
-const externalAttributes = opensNewTab ? { target: "_blank", rel: "noopener noreferrer" } : {};
+const externalAttributes = opensNewTab
+    ? { target: "_blank", rel: "noopener noreferrer" }
+    : {};
 ---
+
 <a href={finalHref} {...externalAttributes}>
-    <img src={imgsrc} alt={`${imgName} icon`} class="contact-icon-small">
-</a>
+    <Image
+        width={30}
+        height={30}
+        src={imgsrc}
+        alt={`${imgName} icon`}
+        class="contact-icon-small"
+    />
 
-<style>
-    img {
-        border-radius: 25%;
-    }
+    <style>
+        img {
+            border-radius: 25%;
+        }
 
-    .contact-icon-small {
-        width: 30px;
-        height: 30px;
-        margin-right: 0px;
-        flex-shrink: 0;
-        display: inline-block;
-        object-fit: contain;
-    }
+        .contact-icon-small {
+            /* width: 30px; */
+            /* height: 30px; */
+            margin-right: 0px;
+            flex-shrink: 0;
+            display: inline-block;
+            object-fit: contain;
+        }
 
-    .contact-icon-small:hover {
-        box-shadow: 0 0 20px rgba(17, 185, 183, 0.719);
-        transform: scale(1.05);
-    }
-</style>
+        .contact-icon-small:hover {
+            box-shadow: 0 0 20px rgba(17, 185, 183, 0.719);
+            transform: scale(1.05);
+        }
+    </style></a
+>
