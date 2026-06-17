@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+import AstroIcon from "../../../public/assets/icons/astro.svg";
+import AstroWorkmark from '../../../public/assets/icons/astro-wordmark.svg';
+---
+
+<div class="rounded-shaped-rectangle">
+    <span class="content-wrapper">
+        Built with <Image src={AstroWorkmark} alt='Astro Icon' class="astro-icon" />
+    </span>
+</div>
+
+<style>
+    .rounded-shaped-rectangle {
+        background: rgba(255, 255, 255, 0.09);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        /* background-color: rgb(71, 71, 71); */
+        display: flex;
+        align-items: center;
+        margin: 10px;
+        outline: 1px solid rgb(155, 155, 155); /* Added 'solid' keyword to fix outline visibility */
+        border-radius: 24px;
+        width: fit-content; /* Keeps the rectangle tight around the text */
+        padding: 5px 15px; /* Added padding for better visual balance */
+    }
+
+    .content-wrapper {
+        display: flex; /* Makes the span a flex container */
+        align-items: center; /* Aligns the text and image vertically */
+        gap: 4px; /* Adjusts the small space specifically between the 'with', the icon, and 'stro' */
+    }
+
+    .astro-icon {
+        object-fit: cover;
+        object-position: center;
+        height: 24px;
+        width: 48px;
+        /* height: auto; */
+        border-radius: 4px;
+        /* background-color: rgb(29, 29, 29); */
+    }
+</style>
